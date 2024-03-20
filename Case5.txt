@@ -1,0 +1,2020 @@
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+23/11/10 17:21:23 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Spark context Web UI available at http://Jiahao:4040
+Spark context available as 'sc' (master = local[*], app id = local-1699608083835).
+Spark session available as 'spark'.
+23/11/10 17:21:26 DEBUG FileSystem: Looking for FS supporting file
+23/11/10 17:21:26 DEBUG FileSystem: looking for configuration option fs.file.impl
+23/11/10 17:21:26 DEBUG FileSystem: Looking in service filesystems for implementation class
+23/11/10 17:21:26 DEBUG FileSystem: FS for file is class org.apache.hadoop.hive.ql.io.ProxyLocalFileSystem
+23/11/10 17:21:26 INFO SharedState: spark.sql.warehouse.dir is not set, but hive.metastore.warehouse.dir is set. Setting spark.sql.warehouse.dir to the value of hive.metastore.warehouse.dir.
+23/11/10 17:21:26 DEBUG SharedState: Applying other initial session options to HadoopConf: spark.eventLog.enabled -> true
+23/11/10 17:21:26 DEBUG SharedState: Applying other initial session options to HadoopConf: spark.jars -> 
+23/11/10 17:21:26 DEBUG SharedState: Applying other initial session options to HadoopConf: spark.repl.class.outputDir -> /tmp/spark-1152f535-e373-45cb-ab8e-f8b5b2cebd76/repl-e2088756-46cd-43d9-b7c6-01c5f70e2175
+23/11/10 17:21:26 DEBUG SharedState: Applying other initial session options to HadoopConf: spark.app.name -> Spark shell
+23/11/10 17:21:26 DEBUG SharedState: Applying other initial session options to HadoopConf: spark.submit.pyFiles -> 
+23/11/10 17:21:26 DEBUG SharedState: Applying other initial session options to HadoopConf: spark.ui.showConsoleProgress -> true
+23/11/10 17:21:26 DEBUG SharedState: Applying other initial session options to HadoopConf: spark.app.submitTime -> 1699608080616
+23/11/10 17:21:26 DEBUG SharedState: Applying other initial session options to HadoopConf: spark.sql.cbo.enabled -> true
+23/11/10 17:21:26 DEBUG SharedState: Applying other initial session options to HadoopConf: spark.submit.deployMode -> client
+23/11/10 17:21:26 DEBUG SharedState: Applying other initial session options to HadoopConf: spark.master -> local[*]
+23/11/10 17:21:26 DEBUG SharedState: Applying other initial session options to HadoopConf: spark.sql.statistics.histogram.enabled -> true
+23/11/10 17:21:26 DEBUG SharedState: Applying other initial session options to HadoopConf: spark.home -> /home/dbgroup/Applications/spark-3.3.0
+23/11/10 17:21:26 DEBUG SharedState: Applying other initial session options to HadoopConf: spark.eventLog.dir -> hdfs://Jiahao:9000/spark3.3.0-logs
+23/11/10 17:21:26 DEBUG SharedState: Applying static initial session options to SparkConf: spark.sql.catalogImplementation -> hive
+23/11/10 17:21:26 INFO SharedState: Warehouse path is 'hdfs://Jiahao:9000/warehouse'.
+23/11/10 17:21:26 DEBUG FsUrlStreamHandlerFactory: Creating handler for protocol jar
+23/11/10 17:21:26 DEBUG FileSystem: Looking for FS supporting jar
+23/11/10 17:21:26 DEBUG FileSystem: looking for configuration option fs.jar.impl
+23/11/10 17:21:26 DEBUG FileSystem: Looking in service filesystems for implementation class
+23/11/10 17:21:26 DEBUG FsUrlStreamHandlerFactory: Unknown protocol jar, delegating to default implementation
+23/11/10 17:21:26 DEBUG FsUrlStreamHandlerFactory: Creating handler for protocol file
+23/11/10 17:21:26 DEBUG FileSystem: Looking for FS supporting file
+23/11/10 17:21:26 DEBUG FileSystem: looking for configuration option fs.file.impl
+23/11/10 17:21:26 DEBUG FileSystem: Looking in service filesystems for implementation class
+23/11/10 17:21:26 DEBUG FileSystem: FS for file is class org.apache.hadoop.hive.ql.io.ProxyLocalFileSystem
+23/11/10 17:21:26 DEBUG FsUrlStreamHandlerFactory: Found implementation of file: class org.apache.hadoop.hive.ql.io.ProxyLocalFileSystem
+23/11/10 17:21:26 DEBUG FsUrlStreamHandlerFactory: Using handler for protocol file
+23/11/10 17:21:26 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.expressions.codegen.package$ExpressionCanonicalizer$CleanExpressions ===
+!input[0, int, false] AS value#0   input[0, int, false]
+!+- input[0, int, false]           
+           
+23/11/10 17:21:26 TRACE package$ExpressionCanonicalizer: Fixed point reached for batch CleanExpressions after 2 iterations.
+23/11/10 17:21:26 TRACE PlanChangeLogger: 
+=== Result of Batch CleanExpressions ===
+!input[0, int, false] AS value#0   input[0, int, false]
+!+- input[0, int, false]           
+          
+23/11/10 17:21:26 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 2
+Total time: 0.001124885 seconds
+Total number of effective runs: 1
+Total time of effective runs: 9.33972E-4 seconds
+      
+23/11/10 17:21:26 DEBUG GenerateUnsafeProjection: code for input[0, int, false]:
+/* 001 */ public java.lang.Object generate(Object[] references) {
+/* 002 */   return new SpecificUnsafeProjection(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ class SpecificUnsafeProjection extends org.apache.spark.sql.catalyst.expressions.UnsafeProjection {
+/* 006 */
+/* 007 */   private Object[] references;
+/* 008 */   private org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[] mutableStateArray_0 = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[1];
+/* 009 */
+/* 010 */   public SpecificUnsafeProjection(Object[] references) {
+/* 011 */     this.references = references;
+/* 012 */     mutableStateArray_0[0] = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter(1, 0);
+/* 013 */
+/* 014 */   }
+/* 015 */
+/* 016 */   public void initialize(int partitionIndex) {
+/* 017 */
+/* 018 */   }
+/* 019 */
+/* 020 */   // Scala.Function1 need this
+/* 021 */   public java.lang.Object apply(java.lang.Object row) {
+/* 022 */     return apply((InternalRow) row);
+/* 023 */   }
+/* 024 */
+/* 025 */   public UnsafeRow apply(InternalRow i) {
+/* 026 */     mutableStateArray_0[0].reset();
+/* 027 */
+/* 028 */
+/* 029 */
+/* 030 */
+/* 031 */     int value_0 = i.getInt(0);
+/* 032 */     mutableStateArray_0[0].write(0, value_0);
+/* 033 */     return (mutableStateArray_0[0].getRow());
+/* 034 */   }
+/* 035 */
+/* 036 */
+/* 037 */ }
+
+23/11/10 17:21:26 DEBUG CodeGenerator: 
+/* 001 */ public java.lang.Object generate(Object[] references) {
+/* 002 */   return new SpecificUnsafeProjection(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ class SpecificUnsafeProjection extends org.apache.spark.sql.catalyst.expressions.UnsafeProjection {
+/* 006 */
+/* 007 */   private Object[] references;
+/* 008 */   private org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[] mutableStateArray_0 = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[1];
+/* 009 */
+/* 010 */   public SpecificUnsafeProjection(Object[] references) {
+/* 011 */     this.references = references;
+/* 012 */     mutableStateArray_0[0] = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter(1, 0);
+/* 013 */
+/* 014 */   }
+/* 015 */
+/* 016 */   public void initialize(int partitionIndex) {
+/* 017 */
+/* 018 */   }
+/* 019 */
+/* 020 */   // Scala.Function1 need this
+/* 021 */   public java.lang.Object apply(java.lang.Object row) {
+/* 022 */     return apply((InternalRow) row);
+/* 023 */   }
+/* 024 */
+/* 025 */   public UnsafeRow apply(InternalRow i) {
+/* 026 */     mutableStateArray_0[0].reset();
+/* 027 */
+/* 028 */
+/* 029 */
+/* 030 */
+/* 031 */     int value_0 = i.getInt(0);
+/* 032 */     mutableStateArray_0[0].write(0, value_0);
+/* 033 */     return (mutableStateArray_0[0].getRow());
+/* 034 */   }
+/* 035 */
+/* 036 */
+/* 037 */ }
+
+23/11/10 17:21:26 INFO CodeGenerator: Code generated in 118.543979 ms
+23/11/10 17:21:26 DEBUG CatalystSqlParser: Parsing command: spark_grouping_id
+23/11/10 17:21:26 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Substitution after 1 iterations.
+23/11/10 17:21:26 TRACE PlanChangeLogger: Batch Substitution has no effect.
+23/11/10 17:21:26 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Disable Hints after 1 iterations.
+23/11/10 17:21:26 TRACE PlanChangeLogger: Batch Disable Hints has no effect.
+23/11/10 17:21:26 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Hints after 1 iterations.
+23/11/10 17:21:26 TRACE PlanChangeLogger: Batch Hints has no effect.
+23/11/10 17:21:26 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Simple Sanity Check after 1 iterations.
+23/11/10 17:21:26 TRACE PlanChangeLogger: Batch Simple Sanity Check has no effect.
+23/11/10 17:21:26 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Keep Legacy Outputs after 1 iterations.
+23/11/10 17:21:26 TRACE PlanChangeLogger: Batch Keep Legacy Outputs has no effect.
+23/11/10 17:21:26 TRACE Analyzer$ResolveReferences: Attempting to resolve LocalRelation [value#1]
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Resolution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Resolution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove TempResolvedColumn after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Apply Char Padding after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Apply Char Padding has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Post-Hoc Resolution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove Unresolved Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Nondeterministic after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Nondeterministic has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UDF after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UDF has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UpdateNullability after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UpdateNullability has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Subquery after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Subquery has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Cleanup after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Cleanup has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch HandleAnalysisOnlyCommand after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 81
+Total time: 0.087514484 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+      
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Substitution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Substitution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Disable Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Disable Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Simple Sanity Check after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Simple Sanity Check has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Keep Legacy Outputs after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Keep Legacy Outputs has no effect.
+23/11/10 17:21:27 TRACE Analyzer$ResolveReferences: Attempting to resolve LocalRelation <empty>, [value#1]
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveDeserializer ===
+!'DeserializeToObject unresolveddeserializer(assertnotnull(upcast(getcolumnbyordinal(0, IntegerType), IntegerType, - root class: "scala.Int"))), obj#2: int   'DeserializeToObject assertnotnull(upcast(value#1, IntegerType, - root class: "scala.Int")), obj#2: int
+ +- LocalRelation <empty>, [value#1]                                                                                                                          +- LocalRelation <empty>, [value#1]
+           
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveUpCast ===
+!'DeserializeToObject assertnotnull(upcast(value#1, IntegerType, - root class: "scala.Int")), obj#2: int   DeserializeToObject assertnotnull(cast(value#1 as int)), obj#2: int
+ +- LocalRelation <empty>, [value#1]                                                                       +- LocalRelation <empty>, [value#1]
+           
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.ResolveTimeZone ===
+ DeserializeToObject assertnotnull(cast(value#1 as int)), obj#2: int   DeserializeToObject assertnotnull(cast(value#1 as int)), obj#2: int
+ +- LocalRelation <empty>, [value#1]                                   +- LocalRelation <empty>, [value#1]
+           
+23/11/10 17:21:27 TRACE Analyzer$ResolveReferences: Attempting to resolve DeserializeToObject assertnotnull(cast(value#1 as int)), obj#2: int
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Resolution after 2 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Result of Batch Resolution ===
+!'DeserializeToObject unresolveddeserializer(assertnotnull(upcast(getcolumnbyordinal(0, IntegerType), IntegerType, - root class: "scala.Int"))), obj#2: int   DeserializeToObject assertnotnull(cast(value#1 as int)), obj#2: int
+ +- LocalRelation <empty>, [value#1]                                                                                                                          +- LocalRelation <empty>, [value#1]
+          
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove TempResolvedColumn after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Apply Char Padding after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Apply Char Padding has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Post-Hoc Resolution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove Unresolved Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Nondeterministic after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Nondeterministic has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UDF after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UDF has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UpdateNullability after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UpdateNullability has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Subquery after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Subquery has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Cleanup after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Cleanup has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch HandleAnalysisOnlyCommand after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 133
+Total time: 0.018116985 seconds
+Total number of effective runs: 3
+Total time of effective runs: 0.010762342 seconds
+      
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Substitution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Substitution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Disable Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Disable Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Simple Sanity Check after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Simple Sanity Check has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Keep Legacy Outputs after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Keep Legacy Outputs has no effect.
+23/11/10 17:21:27 TRACE Analyzer$ResolveReferences: Attempting to resolve Project [value#1 AS t_col#4]
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Resolution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Resolution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove TempResolvedColumn after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Apply Char Padding after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Apply Char Padding has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Post-Hoc Resolution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove Unresolved Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Nondeterministic after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Nondeterministic has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UDF after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UDF has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UpdateNullability after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UpdateNullability has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Subquery after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Subquery has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Cleanup after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Cleanup has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch HandleAnalysisOnlyCommand after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 81
+Total time: 0.002893128 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+      
+23/11/10 17:21:27 DEBUG SparkSqlParser: Parsing command: target
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Substitution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Substitution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Disable Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Disable Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Simple Sanity Check after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Simple Sanity Check has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Keep Legacy Outputs after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Keep Legacy Outputs has no effect.
+23/11/10 17:21:27 TRACE Analyzer$ResolveReferences: Attempting to resolve CreateViewCommand `target`, false, true, LocalTempView, true
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Resolution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Resolution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove TempResolvedColumn after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Apply Char Padding after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Apply Char Padding has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Post-Hoc Resolution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove Unresolved Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Nondeterministic after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Nondeterministic has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UDF after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UDF has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UpdateNullability after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UpdateNullability has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Subquery after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Subquery has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Cleanup after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Cleanup has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch HandleAnalysisOnlyCommand after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 81
+Total time: 0.002553615 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+      
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Eliminate Distinct after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Eliminate Distinct has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Finish Analysis after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Finish Analysis has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Inline CTE after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Inline CTE has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Union after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Union has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch OptimizeLimitZero after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch OptimizeLimitZero has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch LocalRelation early after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch LocalRelation early has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Pullup Correlated Expressions after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Pullup Correlated Expressions has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Subquery after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Subquery has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Replace Operators after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Replace Operators has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Aggregate after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Aggregate has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Operator Optimization before Inferring Filters after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Operator Optimization before Inferring Filters has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Infer Filters after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Infer Filters has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Operator Optimization after Inferring Filters after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Operator Optimization after Inferring Filters has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Push extra predicate through join after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Push extra predicate through join has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Clean Up Temporary CTE Info after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Clean Up Temporary CTE Info has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Pre CBO Rules after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Pre CBO Rules has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Early Filter and Projection Push-Down after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Early Filter and Projection Push-Down has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Update CTE Relation Stats after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Update CTE Relation Stats has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Join Reorder after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Join Reorder has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Eliminate Sorts after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Eliminate Sorts has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Decimal Optimizations after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Decimal Optimizations has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Distinct Aggregate Rewrite after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Distinct Aggregate Rewrite has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Object Expressions Optimization after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Object Expressions Optimization has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch LocalRelation after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch LocalRelation has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Optimize One Row Plan after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Optimize One Row Plan has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Check Cartesian Products after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Check Cartesian Products has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch RewriteSubquery after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch RewriteSubquery has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch NormalizeFloatingNumbers after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch NormalizeFloatingNumbers has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch ReplaceUpdateFieldsExpression after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch ReplaceUpdateFieldsExpression has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Optimize Metadata Only Query after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Optimize Metadata Only Query has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch PartitionPruning after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch PartitionPruning has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch InjectRuntimeFilter after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch InjectRuntimeFilter has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch MergeScalarSubqueries after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch MergeScalarSubqueries has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Pushdown Filters from PartitionPruning after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Pushdown Filters from PartitionPruning has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Cleanup filters that cannot be pushed down after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Cleanup filters that cannot be pushed down has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Extract Python UDFs after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Extract Python UDFs has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch User Provided Optimizers after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch User Provided Optimizers has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Replace CTE with Repartition after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Replace CTE with Repartition has no effect.
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 174
+Total time: 0.064510215 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+      
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Preparations has no effect.
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.expressions.codegen.package$ExpressionCanonicalizer$CleanExpressions ===
+!input[0, int, false] AS value#6   input[0, int, false]
+!+- input[0, int, false]           
+           
+23/11/10 17:21:27 TRACE package$ExpressionCanonicalizer: Fixed point reached for batch CleanExpressions after 2 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Result of Batch CleanExpressions ===
+!input[0, int, false] AS value#6   input[0, int, false]
+!+- input[0, int, false]           
+          
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 2
+Total time: 2.4341E-5 seconds
+Total number of effective runs: 1
+Total time of effective runs: 1.5214E-5 seconds
+      
+23/11/10 17:21:27 DEBUG GenerateUnsafeProjection: code for input[0, int, false]:
+/* 001 */ public java.lang.Object generate(Object[] references) {
+/* 002 */   return new SpecificUnsafeProjection(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ class SpecificUnsafeProjection extends org.apache.spark.sql.catalyst.expressions.UnsafeProjection {
+/* 006 */
+/* 007 */   private Object[] references;
+/* 008 */   private org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[] mutableStateArray_0 = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[1];
+/* 009 */
+/* 010 */   public SpecificUnsafeProjection(Object[] references) {
+/* 011 */     this.references = references;
+/* 012 */     mutableStateArray_0[0] = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter(1, 0);
+/* 013 */
+/* 014 */   }
+/* 015 */
+/* 016 */   public void initialize(int partitionIndex) {
+/* 017 */
+/* 018 */   }
+/* 019 */
+/* 020 */   // Scala.Function1 need this
+/* 021 */   public java.lang.Object apply(java.lang.Object row) {
+/* 022 */     return apply((InternalRow) row);
+/* 023 */   }
+/* 024 */
+/* 025 */   public UnsafeRow apply(InternalRow i) {
+/* 026 */     mutableStateArray_0[0].reset();
+/* 027 */
+/* 028 */
+/* 029 */
+/* 030 */
+/* 031 */     int value_0 = i.getInt(0);
+/* 032 */     mutableStateArray_0[0].write(0, value_0);
+/* 033 */     return (mutableStateArray_0[0].getRow());
+/* 034 */   }
+/* 035 */
+/* 036 */
+/* 037 */ }
+
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Substitution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Substitution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Disable Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Disable Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Simple Sanity Check after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Simple Sanity Check has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Keep Legacy Outputs after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Keep Legacy Outputs has no effect.
+23/11/10 17:21:27 TRACE Analyzer$ResolveReferences: Attempting to resolve LocalRelation [value#7]
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Resolution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Resolution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove TempResolvedColumn after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Apply Char Padding after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Apply Char Padding has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Post-Hoc Resolution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove Unresolved Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Nondeterministic after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Nondeterministic has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UDF after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UDF has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UpdateNullability after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UpdateNullability has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Subquery after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Subquery has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Cleanup after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Cleanup has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch HandleAnalysisOnlyCommand after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 81
+Total time: 0.00128956 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+      
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Substitution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Substitution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Disable Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Disable Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Simple Sanity Check after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Simple Sanity Check has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Keep Legacy Outputs after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Keep Legacy Outputs has no effect.
+23/11/10 17:21:27 TRACE Analyzer$ResolveReferences: Attempting to resolve LocalRelation <empty>, [value#7]
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveDeserializer ===
+!'DeserializeToObject unresolveddeserializer(assertnotnull(upcast(getcolumnbyordinal(0, IntegerType), IntegerType, - root class: "scala.Int"))), obj#8: int   'DeserializeToObject assertnotnull(upcast(value#7, IntegerType, - root class: "scala.Int")), obj#8: int
+ +- LocalRelation <empty>, [value#7]                                                                                                                          +- LocalRelation <empty>, [value#7]
+           
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveUpCast ===
+!'DeserializeToObject assertnotnull(upcast(value#7, IntegerType, - root class: "scala.Int")), obj#8: int   DeserializeToObject assertnotnull(cast(value#7 as int)), obj#8: int
+ +- LocalRelation <empty>, [value#7]                                                                       +- LocalRelation <empty>, [value#7]
+           
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.ResolveTimeZone ===
+ DeserializeToObject assertnotnull(cast(value#7 as int)), obj#8: int   DeserializeToObject assertnotnull(cast(value#7 as int)), obj#8: int
+ +- LocalRelation <empty>, [value#7]                                   +- LocalRelation <empty>, [value#7]
+           
+23/11/10 17:21:27 TRACE Analyzer$ResolveReferences: Attempting to resolve DeserializeToObject assertnotnull(cast(value#7 as int)), obj#8: int
+23/11/10 17:21:27 DEBUG DFSClient: WriteChunk allocating new packet seqno=6, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=87552, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:27 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=91061, lastFlushOffset=87695, createNewBlock=false
+23/11/10 17:21:27 DEBUG DataStreamer: Queued packet seqno: 6 offsetInBlock: 87552 lastPacketInBlock: false lastByteOffsetInBlock: 91061, blk_1073742678_1859
+23/11/10 17:21:27 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 6
+23/11/10 17:21:27 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:27 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 6 offsetInBlock: 87552 lastPacketInBlock: false lastByteOffsetInBlock: 91061
+23/11/10 17:21:27 DEBUG DataStreamer: DFSClient seqno: 6 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:27 DEBUG DFSClient: WriteChunk allocating new packet seqno=7, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=90624, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:27 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=91173, lastFlushOffset=91061, createNewBlock=false
+23/11/10 17:21:27 DEBUG DataStreamer: Queued packet seqno: 7 offsetInBlock: 90624 lastPacketInBlock: false lastByteOffsetInBlock: 91173, blk_1073742678_1859
+23/11/10 17:21:27 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 7
+23/11/10 17:21:27 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:27 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 7 offsetInBlock: 90624 lastPacketInBlock: false lastByteOffsetInBlock: 91173
+23/11/10 17:21:27 DEBUG DataStreamer: DFSClient seqno: 7 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Resolution after 2 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Result of Batch Resolution ===
+!'DeserializeToObject unresolveddeserializer(assertnotnull(upcast(getcolumnbyordinal(0, IntegerType), IntegerType, - root class: "scala.Int"))), obj#8: int   DeserializeToObject assertnotnull(cast(value#7 as int)), obj#8: int
+ +- LocalRelation <empty>, [value#7]                                                                                                                          +- LocalRelation <empty>, [value#7]
+          
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove TempResolvedColumn after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Apply Char Padding after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Apply Char Padding has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Post-Hoc Resolution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove Unresolved Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Nondeterministic after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Nondeterministic has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UDF after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UDF has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UpdateNullability after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UpdateNullability has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Subquery after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Subquery has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Cleanup after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Cleanup has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch HandleAnalysisOnlyCommand after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 133
+Total time: 0.003345528 seconds
+Total number of effective runs: 3
+Total time of effective runs: 5.6958E-4 seconds
+      
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Substitution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Substitution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Disable Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Disable Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Simple Sanity Check after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Simple Sanity Check has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Keep Legacy Outputs after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Keep Legacy Outputs has no effect.
+23/11/10 17:21:27 TRACE Analyzer$ResolveReferences: Attempting to resolve Project [value#7 AS s_col#10]
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Resolution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Resolution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove TempResolvedColumn after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Apply Char Padding after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Apply Char Padding has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Post-Hoc Resolution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove Unresolved Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Nondeterministic after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Nondeterministic has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UDF after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UDF has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UpdateNullability after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UpdateNullability has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Subquery after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Subquery has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Cleanup after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Cleanup has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch HandleAnalysisOnlyCommand after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 81
+Total time: 0.001249654 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+      
+23/11/10 17:21:27 DEBUG SparkSqlParser: Parsing command: source
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Substitution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Substitution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Disable Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Disable Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Simple Sanity Check after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Simple Sanity Check has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Keep Legacy Outputs after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Keep Legacy Outputs has no effect.
+23/11/10 17:21:27 TRACE Analyzer$ResolveReferences: Attempting to resolve CreateViewCommand `source`, false, true, LocalTempView, true
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Resolution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Resolution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove TempResolvedColumn after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Apply Char Padding after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Apply Char Padding has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Post-Hoc Resolution after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove Unresolved Hints after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Nondeterministic after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Nondeterministic has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UDF after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UDF has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UpdateNullability after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch UpdateNullability has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Subquery after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Subquery has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Cleanup after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Cleanup has no effect.
+23/11/10 17:21:27 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch HandleAnalysisOnlyCommand after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 81
+Total time: 8.7848E-4 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+      
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Eliminate Distinct after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Eliminate Distinct has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Finish Analysis after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Finish Analysis has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Inline CTE after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Inline CTE has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Union after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Union has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch OptimizeLimitZero after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch OptimizeLimitZero has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch LocalRelation early after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch LocalRelation early has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Pullup Correlated Expressions after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Pullup Correlated Expressions has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Subquery after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Subquery has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Replace Operators after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Replace Operators has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Aggregate after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Aggregate has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Operator Optimization before Inferring Filters after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Operator Optimization before Inferring Filters has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Infer Filters after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Infer Filters has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Operator Optimization after Inferring Filters after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Operator Optimization after Inferring Filters has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Push extra predicate through join after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Push extra predicate through join has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Clean Up Temporary CTE Info after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Clean Up Temporary CTE Info has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Pre CBO Rules after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Pre CBO Rules has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Early Filter and Projection Push-Down after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Early Filter and Projection Push-Down has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Update CTE Relation Stats after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Update CTE Relation Stats has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Join Reorder after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Join Reorder has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Eliminate Sorts after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Eliminate Sorts has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Decimal Optimizations after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Decimal Optimizations has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Distinct Aggregate Rewrite after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Distinct Aggregate Rewrite has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Object Expressions Optimization after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Object Expressions Optimization has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch LocalRelation after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch LocalRelation has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Optimize One Row Plan after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Optimize One Row Plan has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Check Cartesian Products after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Check Cartesian Products has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch RewriteSubquery after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch RewriteSubquery has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch NormalizeFloatingNumbers after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch NormalizeFloatingNumbers has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch ReplaceUpdateFieldsExpression after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch ReplaceUpdateFieldsExpression has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Optimize Metadata Only Query after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Optimize Metadata Only Query has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch PartitionPruning after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch PartitionPruning has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch InjectRuntimeFilter after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch InjectRuntimeFilter has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch MergeScalarSubqueries after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch MergeScalarSubqueries has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Pushdown Filters from PartitionPruning after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Pushdown Filters from PartitionPruning has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Cleanup filters that cannot be pushed down after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Cleanup filters that cannot be pushed down has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Extract Python UDFs after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Extract Python UDFs has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch User Provided Optimizers after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch User Provided Optimizers has no effect.
+23/11/10 17:21:27 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Replace CTE with Repartition after 1 iterations.
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Replace CTE with Repartition has no effect.
+23/11/10 17:21:27 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 174
+Total time: 0.002179162 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+      
+23/11/10 17:21:27 TRACE PlanChangeLogger: Batch Preparations has no effect.
+23/11/10 17:21:27 DEBUG DFSClient: WriteChunk allocating new packet seqno=8, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=91136, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:27 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=94540, lastFlushOffset=91173, createNewBlock=false
+23/11/10 17:21:27 DEBUG DataStreamer: Queued packet seqno: 8 offsetInBlock: 91136 lastPacketInBlock: false lastByteOffsetInBlock: 94540, blk_1073742678_1859
+23/11/10 17:21:27 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 8
+23/11/10 17:21:27 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:27 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 8 offsetInBlock: 91136 lastPacketInBlock: false lastByteOffsetInBlock: 94540
+23/11/10 17:21:27 DEBUG DataStreamer: DFSClient seqno: 8 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:27 DEBUG SparkSqlParser: Parsing command: SELECT /*+ BROADCAST(t) */ * FROM target t join source s on t.t_col = s.s_col
+23/11/10 17:21:27 DEBUG DFSClient: WriteChunk allocating new packet seqno=9, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=94208, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:27 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=94652, lastFlushOffset=94540, createNewBlock=false
+23/11/10 17:21:27 DEBUG DataStreamer: Queued packet seqno: 9 offsetInBlock: 94208 lastPacketInBlock: false lastByteOffsetInBlock: 94652, blk_1073742678_1859
+23/11/10 17:21:27 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 9
+23/11/10 17:21:27 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:27 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 9 offsetInBlock: 94208 lastPacketInBlock: false lastByteOffsetInBlock: 94652
+23/11/10 17:21:27 DEBUG DataStreamer: DFSClient seqno: 9 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Substitution after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Substitution has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Disable Hints after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Disable Hints has no effect.
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.ResolveHints$ResolveJoinStrategyHints ===
+!'UnresolvedHint BROADCAST, ['t]                       'Project [*]
+!+- 'Project [*]                                       +- 'Join Inner, ('t.t_col = 's.s_col)
+!   +- 'Join Inner, ('t.t_col = 's.s_col)                 :- 'ResolvedHint (strategy=broadcast)
+!      :- 'SubqueryAlias t                                :  +- 'SubqueryAlias t
+!      :  +- 'UnresolvedRelation [target], [], false      :     +- 'UnresolvedRelation [target], [], false
+!      +- 'SubqueryAlias s                                +- 'SubqueryAlias s
+!         +- 'UnresolvedRelation [source], [], false         +- 'UnresolvedRelation [source], [], false
+           
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Hints after 2 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Result of Batch Hints ===
+!'UnresolvedHint BROADCAST, ['t]                       'Project [*]
+!+- 'Project [*]                                       +- 'Join Inner, ('t.t_col = 's.s_col)
+!   +- 'Join Inner, ('t.t_col = 's.s_col)                 :- 'ResolvedHint (strategy=broadcast)
+!      :- 'SubqueryAlias t                                :  +- 'SubqueryAlias t
+!      :  +- 'UnresolvedRelation [target], [], false      :     +- 'UnresolvedRelation [target], [], false
+!      +- 'SubqueryAlias s                                +- 'SubqueryAlias s
+!         +- 'UnresolvedRelation [source], [], false         +- 'UnresolvedRelation [source], [], false
+          
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Simple Sanity Check after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Simple Sanity Check has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Keep Legacy Outputs after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Keep Legacy Outputs has no effect.
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveRelations ===
+ 'Project [*]                                          'Project [*]
+ +- 'Join Inner, ('t.t_col = 's.s_col)                 +- 'Join Inner, ('t.t_col = 's.s_col)
+!   :- 'ResolvedHint (strategy=broadcast)                 :- ResolvedHint (strategy=broadcast)
+!   :  +- 'SubqueryAlias t                                :  +- SubqueryAlias t
+!   :     +- 'UnresolvedRelation [target], [], false      :     +- SubqueryAlias target
+!   +- 'SubqueryAlias s                                   :        +- View (`target`, [t_col#4])
+!      +- 'UnresolvedRelation [source], [], false         :           +- Project [value#1 AS t_col#4]
+!                                                         :              +- LocalRelation [value#1]
+!                                                         +- SubqueryAlias s
+!                                                            +- SubqueryAlias source
+!                                                               +- View (`source`, [s_col#10])
+!                                                                  +- Project [value#7 AS s_col#10]
+!                                                                     +- LocalRelation [value#7]
+           
+23/11/10 17:21:28 TRACE Analyzer$ResolveReferences: Attempting to resolve View (`target`, [t_col#4])
+23/11/10 17:21:28 TRACE Analyzer$ResolveReferences: Attempting to resolve SubqueryAlias target
+23/11/10 17:21:28 TRACE Analyzer$ResolveReferences: Attempting to resolve SubqueryAlias t
+23/11/10 17:21:28 TRACE Analyzer$ResolveReferences: Attempting to resolve ResolvedHint (strategy=broadcast)
+23/11/10 17:21:28 TRACE Analyzer$ResolveReferences: Attempting to resolve View (`source`, [s_col#10])
+23/11/10 17:21:28 TRACE Analyzer$ResolveReferences: Attempting to resolve SubqueryAlias source
+23/11/10 17:21:28 TRACE Analyzer$ResolveReferences: Attempting to resolve SubqueryAlias s
+23/11/10 17:21:28 TRACE Analyzer$ResolveReferences: Attempting to resolve 'Join Inner, ('t.t_col = 's.s_col)
+23/11/10 17:21:28 DEBUG HiveSessionStateBuilder$$anon$1: Resolving 't.t_col to t_col#4
+23/11/10 17:21:28 DEBUG HiveSessionStateBuilder$$anon$1: Resolving 's.s_col to s_col#10
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences ===
+!'Project [*]                                     Project [t_col#4, s_col#10]
+!+- 'Join Inner, ('t.t_col = 's.s_col)            +- Join Inner, (t_col#4 = s_col#10)
+    :- ResolvedHint (strategy=broadcast)             :- ResolvedHint (strategy=broadcast)
+    :  +- SubqueryAlias t                            :  +- SubqueryAlias t
+    :     +- SubqueryAlias target                    :     +- SubqueryAlias target
+    :        +- View (`target`, [t_col#4])           :        +- View (`target`, [t_col#4])
+    :           +- Project [value#1 AS t_col#4]      :           +- Project [value#1 AS t_col#4]
+    :              +- LocalRelation [value#1]        :              +- LocalRelation [value#1]
+    +- SubqueryAlias s                               +- SubqueryAlias s
+       +- SubqueryAlias source                          +- SubqueryAlias source
+          +- View (`source`, [s_col#10])                   +- View (`source`, [s_col#10])
+             +- Project [value#7 AS s_col#10]                 +- Project [value#7 AS s_col#10]
+                +- LocalRelation [value#7]                       +- LocalRelation [value#7]
+           
+23/11/10 17:21:28 TRACE Analyzer$ResolveReferences: Attempting to resolve Join Inner, (t_col#4 = s_col#10)
+23/11/10 17:21:28 TRACE Analyzer$ResolveReferences: Attempting to resolve Project [t_col#4, s_col#10]
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Resolution after 2 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Result of Batch Resolution ===
+!'Project [*]                                          Project [t_col#4, s_col#10]
+!+- 'Join Inner, ('t.t_col = 's.s_col)                 +- Join Inner, (t_col#4 = s_col#10)
+!   :- 'ResolvedHint (strategy=broadcast)                 :- ResolvedHint (strategy=broadcast)
+!   :  +- 'SubqueryAlias t                                :  +- SubqueryAlias t
+!   :     +- 'UnresolvedRelation [target], [], false      :     +- SubqueryAlias target
+!   +- 'SubqueryAlias s                                   :        +- View (`target`, [t_col#4])
+!      +- 'UnresolvedRelation [source], [], false         :           +- Project [value#1 AS t_col#4]
+!                                                         :              +- LocalRelation [value#1]
+!                                                         +- SubqueryAlias s
+!                                                            +- SubqueryAlias source
+!                                                               +- View (`source`, [s_col#10])
+!                                                                  +- Project [value#7 AS s_col#10]
+!                                                                     +- LocalRelation [value#7]
+          
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove TempResolvedColumn after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Apply Char Padding after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Apply Char Padding has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Post-Hoc Resolution after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove Unresolved Hints after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Nondeterministic after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Nondeterministic has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UDF after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch UDF has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UpdateNullability after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch UpdateNullability has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Subquery after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Subquery has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Cleanup after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Cleanup has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch HandleAnalysisOnlyCommand after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 135
+Total time: 0.022764324 seconds
+Total number of effective runs: 3
+Total time of effective runs: 0.012870364 seconds
+      
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Eliminate Distinct after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Eliminate Distinct has no effect.
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.Optimizer$FinishAnalysis ===
+ Project [t_col#4, s_col#10]                      Project [t_col#4, s_col#10]
+!+- Join Inner, (t_col#4 = s_col#10)              +- Join Inner, (t_col#4 = s_col#10), leftHint=(strategy=broadcast)
+!   :- ResolvedHint (strategy=broadcast)             :- Project [value#1 AS t_col#4]
+!   :  +- SubqueryAlias t                            :  +- LocalRelation [value#1]
+!   :     +- SubqueryAlias target                    +- Project [value#7 AS s_col#10]
+!   :        +- View (`target`, [t_col#4])              +- LocalRelation [value#7]
+!   :           +- Project [value#1 AS t_col#4]   
+!   :              +- LocalRelation [value#1]     
+!   +- SubqueryAlias s                            
+!      +- SubqueryAlias source                    
+!         +- View (`source`, [s_col#10])          
+!            +- Project [value#7 AS s_col#10]     
+!               +- LocalRelation [value#7]        
+           
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Result of Batch Finish Analysis ===
+ Project [t_col#4, s_col#10]                      Project [t_col#4, s_col#10]
+!+- Join Inner, (t_col#4 = s_col#10)              +- Join Inner, (t_col#4 = s_col#10), leftHint=(strategy=broadcast)
+!   :- ResolvedHint (strategy=broadcast)             :- Project [value#1 AS t_col#4]
+!   :  +- SubqueryAlias t                            :  +- LocalRelation [value#1]
+!   :     +- SubqueryAlias target                    +- Project [value#7 AS s_col#10]
+!   :        +- View (`target`, [t_col#4])              +- LocalRelation [value#7]
+!   :           +- Project [value#1 AS t_col#4]   
+!   :              +- LocalRelation [value#1]     
+!   +- SubqueryAlias s                            
+!      +- SubqueryAlias source                    
+!         +- View (`source`, [s_col#10])          
+!            +- Project [value#7 AS s_col#10]     
+!               +- LocalRelation [value#7]        
+          
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Inline CTE after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Inline CTE has no effect.
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.RemoveNoopOperators ===
+!Project [t_col#4, s_col#10]                                          Join Inner, (t_col#4 = s_col#10), leftHint=(strategy=broadcast)
+!+- Join Inner, (t_col#4 = s_col#10), leftHint=(strategy=broadcast)   :- Project [value#1 AS t_col#4]
+!   :- Project [value#1 AS t_col#4]                                   :  +- LocalRelation [value#1]
+!   :  +- LocalRelation [value#1]                                     +- Project [value#7 AS s_col#10]
+!   +- Project [value#7 AS s_col#10]                                     +- LocalRelation [value#7]
+!      +- LocalRelation [value#7]                                     
+           
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Result of Batch Union ===
+!Project [t_col#4, s_col#10]                                          Join Inner, (t_col#4 = s_col#10), leftHint=(strategy=broadcast)
+!+- Join Inner, (t_col#4 = s_col#10), leftHint=(strategy=broadcast)   :- Project [value#1 AS t_col#4]
+!   :- Project [value#1 AS t_col#4]                                   :  +- LocalRelation [value#1]
+!   :  +- LocalRelation [value#1]                                     +- Project [value#7 AS s_col#10]
+!   +- Project [value#7 AS s_col#10]                                     +- LocalRelation [value#7]
+!      +- LocalRelation [value#7]                                     
+          
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch OptimizeLimitZero after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch OptimizeLimitZero has no effect.
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.ConvertToLocalRelation ===
+ Join Inner, (t_col#4 = s_col#10), leftHint=(strategy=broadcast)   Join Inner, (t_col#4 = s_col#10), leftHint=(strategy=broadcast)
+!:- Project [value#1 AS t_col#4]                                   :- LocalRelation [t_col#4]
+!:  +- LocalRelation [value#1]                                     +- LocalRelation [s_col#10]
+!+- Project [value#7 AS s_col#10]                                  
+!   +- LocalRelation [value#7]                                     
+           
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch LocalRelation early after 2 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Result of Batch LocalRelation early ===
+ Join Inner, (t_col#4 = s_col#10), leftHint=(strategy=broadcast)   Join Inner, (t_col#4 = s_col#10), leftHint=(strategy=broadcast)
+!:- Project [value#1 AS t_col#4]                                   :- LocalRelation [t_col#4]
+!:  +- LocalRelation [value#1]                                     +- LocalRelation [s_col#10]
+!+- Project [value#7 AS s_col#10]                                  
+!   +- LocalRelation [value#7]                                     
+          
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Pullup Correlated Expressions after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Pullup Correlated Expressions has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Subquery after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Subquery has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Replace Operators after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Replace Operators has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Aggregate after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Aggregate has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Operator Optimization before Inferring Filters after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Operator Optimization before Inferring Filters has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Infer Filters after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Infer Filters has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Operator Optimization after Inferring Filters after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Operator Optimization after Inferring Filters has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Push extra predicate through join after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Push extra predicate through join has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Clean Up Temporary CTE Info after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Clean Up Temporary CTE Info has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Pre CBO Rules after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Pre CBO Rules has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Early Filter and Projection Push-Down after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Early Filter and Projection Push-Down has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Update CTE Relation Stats after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Update CTE Relation Stats has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Join Reorder after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Join Reorder has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Eliminate Sorts after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Eliminate Sorts has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Decimal Optimizations after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Decimal Optimizations has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Distinct Aggregate Rewrite after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Distinct Aggregate Rewrite has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Object Expressions Optimization after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Object Expressions Optimization has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch LocalRelation after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch LocalRelation has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Optimize One Row Plan after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Optimize One Row Plan has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Check Cartesian Products after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Check Cartesian Products has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch RewriteSubquery after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch RewriteSubquery has no effect.
+23/11/10 17:21:28 DEBUG ExtractEquiJoinKeys: Considering join on: Some((t_col#4 = s_col#10))
+23/11/10 17:21:28 DEBUG ExtractEquiJoinKeys: leftKeys:List(t_col#4) | rightKeys:List(s_col#10)
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch NormalizeFloatingNumbers after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch NormalizeFloatingNumbers has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch ReplaceUpdateFieldsExpression after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch ReplaceUpdateFieldsExpression has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Optimize Metadata Only Query after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Optimize Metadata Only Query has no effect.
+23/11/10 17:21:28 DEBUG ExtractEquiJoinKeys: Considering join on: Some((t_col#4 = s_col#10))
+23/11/10 17:21:28 DEBUG ExtractEquiJoinKeys: leftKeys:List(t_col#4) | rightKeys:List(s_col#10)
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch PartitionPruning after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch PartitionPruning has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch InjectRuntimeFilter after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch InjectRuntimeFilter has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch MergeScalarSubqueries after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch MergeScalarSubqueries has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Pushdown Filters from PartitionPruning after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Pushdown Filters from PartitionPruning has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Cleanup filters that cannot be pushed down after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Cleanup filters that cannot be pushed down has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Extract Python UDFs after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Extract Python UDFs has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch User Provided Optimizers after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch User Provided Optimizers has no effect.
+23/11/10 17:21:28 TRACE BaseSessionStateBuilder$$anon$2: Fixed point reached for batch Replace CTE with Repartition after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Replace CTE with Repartition has no effect.
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 177
+Total time: 0.028144311 seconds
+Total number of effective runs: 3
+Total time of effective runs: 0.008695547 seconds
+      
+23/11/10 17:21:28 DEBUG ExtractEquiJoinKeys: Considering join on: Some((t_col#4 = s_col#10))
+23/11/10 17:21:28 DEBUG ExtractEquiJoinKeys: leftKeys:List(t_col#4) | rightKeys:List(s_col#10)
+23/11/10 17:21:28 DEBUG ExtractEquiJoinKeys: Considering join on: Some((t_col#4 = s_col#10))
+23/11/10 17:21:28 DEBUG ExtractEquiJoinKeys: leftKeys:List(t_col#4) | rightKeys:List(s_col#10)
+23/11/10 17:21:28 DEBUG InsertAdaptiveSparkPlan: Adaptive execution enabled for plan: BroadcastHashJoin [t_col#4], [s_col#10], Inner, BuildLeft, false
+:- LocalTableScan [t_col#4]
++- LocalTableScan [s_col#10]
+
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.execution.exchange.EnsureRequirements ===
+ BroadcastHashJoin [t_col#4], [s_col#10], Inner, BuildLeft, false   BroadcastHashJoin [t_col#4], [s_col#10], Inner, BuildLeft, false
+!:- LocalTableScan [t_col#4]                                        :- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, false] as bigint)),false), [id=#18]
+!+- LocalTableScan [s_col#10]                                       :  +- LocalTableScan [t_col#4]
+!                                                                   +- LocalTableScan [s_col#10]
+           
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Result of Batch AQE Preparations ===
+ BroadcastHashJoin [t_col#4], [s_col#10], Inner, BuildLeft, false   BroadcastHashJoin [t_col#4], [s_col#10], Inner, BuildLeft, false
+!:- LocalTableScan [t_col#4]                                        :- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, false] as bigint)),false), [id=#18]
+!+- LocalTableScan [s_col#10]                                       :  +- LocalTableScan [t_col#4]
+!                                                                   +- LocalTableScan [s_col#10]
+          
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.execution.adaptive.InsertAdaptiveSparkPlan ===
+!BroadcastHashJoin [t_col#4], [s_col#10], Inner, BuildLeft, false   AdaptiveSparkPlan isFinalPlan=false
+!:- LocalTableScan [t_col#4]                                        +- BroadcastHashJoin [t_col#4], [s_col#10], Inner, BuildLeft, false
+!+- LocalTableScan [s_col#10]                                          :- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, false] as bigint)),false), [id=#18]
+!                                                                      :  +- LocalTableScan [t_col#4]
+!                                                                      +- LocalTableScan [s_col#10]
+           
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Result of Batch Preparations ===
+!BroadcastHashJoin [t_col#4], [s_col#10], Inner, BuildLeft, false   AdaptiveSparkPlan isFinalPlan=false
+!:- LocalTableScan [t_col#4]                                        +- BroadcastHashJoin [t_col#4], [s_col#10], Inner, BuildLeft, false
+!+- LocalTableScan [s_col#10]                                          :- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, false] as bigint)),false), [id=#18]
+!                                                                      :  +- LocalTableScan [t_col#4]
+!                                                                      +- LocalTableScan [s_col#10]
+          
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Substitution after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Substitution has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Disable Hints after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Disable Hints has no effect.
+23/11/10 17:21:28 DEBUG DFSClient: WriteChunk allocating new packet seqno=10, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=94208, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:28 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=99387, lastFlushOffset=94652, createNewBlock=false
+23/11/10 17:21:28 DEBUG DataStreamer: Queued packet seqno: 10 offsetInBlock: 94208 lastPacketInBlock: false lastByteOffsetInBlock: 99387, blk_1073742678_1859
+23/11/10 17:21:28 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 10
+23/11/10 17:21:28 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:28 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 10 offsetInBlock: 94208 lastPacketInBlock: false lastByteOffsetInBlock: 99387
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Hints after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Hints has no effect.
+23/11/10 17:21:28 DEBUG DataStreamer: DFSClient seqno: 10 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Simple Sanity Check after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Simple Sanity Check has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Keep Legacy Outputs after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Keep Legacy Outputs has no effect.
+23/11/10 17:21:28 TRACE Analyzer$ResolveReferences: Attempting to resolve LocalRelation <empty>, [t_col#4, s_col#10]
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveDeserializer ===
+!'DeserializeToObject unresolveddeserializer(createexternalrow(getcolumnbyordinal(0, StructField(t_col,IntegerType,false), StructField(s_col,IntegerType,false)), getcolumnbyordinal(1, StructField(t_col,IntegerType,false), StructField(s_col,IntegerType,false)), StructField(t_col,IntegerType,false), StructField(s_col,IntegerType,false))), obj#14: org.apache.spark.sql.Row   DeserializeToObject createexternalrow(t_col#4, s_col#10, StructField(t_col,IntegerType,false), StructField(s_col,IntegerType,false)), obj#14: org.apache.spark.sql.Row
+ +- LocalRelation <empty>, [t_col#4, s_col#10]                                                                                                                                                                                                                                                                                                                                        +- LocalRelation <empty>, [t_col#4, s_col#10]
+           
+23/11/10 17:21:28 TRACE Analyzer$ResolveReferences: Attempting to resolve DeserializeToObject createexternalrow(t_col#4, s_col#10, StructField(t_col,IntegerType,false), StructField(s_col,IntegerType,false)), obj#14: org.apache.spark.sql.Row
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Resolution after 2 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Result of Batch Resolution ===
+!'DeserializeToObject unresolveddeserializer(createexternalrow(getcolumnbyordinal(0, StructField(t_col,IntegerType,false), StructField(s_col,IntegerType,false)), getcolumnbyordinal(1, StructField(t_col,IntegerType,false), StructField(s_col,IntegerType,false)), StructField(t_col,IntegerType,false), StructField(s_col,IntegerType,false))), obj#14: org.apache.spark.sql.Row   DeserializeToObject createexternalrow(t_col#4, s_col#10, StructField(t_col,IntegerType,false), StructField(s_col,IntegerType,false)), obj#14: org.apache.spark.sql.Row
+ +- LocalRelation <empty>, [t_col#4, s_col#10]                                                                                                                                                                                                                                                                                                                                        +- LocalRelation <empty>, [t_col#4, s_col#10]
+          
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove TempResolvedColumn after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Apply Char Padding after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Apply Char Padding has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Post-Hoc Resolution after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Remove Unresolved Hints after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Nondeterministic after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Nondeterministic has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UDF after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch UDF has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch UpdateNullability after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch UpdateNullability has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Subquery after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Subquery has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch Cleanup after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch Cleanup has no effect.
+23/11/10 17:21:28 TRACE HiveSessionStateBuilder$$anon$1: Fixed point reached for batch HandleAnalysisOnlyCommand after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 133
+Total time: 0.00230002 seconds
+Total number of effective runs: 1
+Total time of effective runs: 2.36107E-4 seconds
+      
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch AQE Query Stage Optimization has no effect.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch AQE Post Stage Creation has no effect.
+23/11/10 17:21:28 DEBUG BroadcastQueryStageExec: Materialize query stage BroadcastQueryStageExec: 0
+23/11/10 17:21:28 DEBUG DFSClient: WriteChunk allocating new packet seqno=11, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=99328, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:28 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=101908, lastFlushOffset=99387, createNewBlock=false
+23/11/10 17:21:28 DEBUG DataStreamer: Queued packet seqno: 11 offsetInBlock: 99328 lastPacketInBlock: false lastByteOffsetInBlock: 101908, blk_1073742678_1859
+23/11/10 17:21:28 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 11
+23/11/10 17:21:28 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:28 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 11 offsetInBlock: 99328 lastPacketInBlock: false lastByteOffsetInBlock: 101908
+23/11/10 17:21:28 DEBUG DataStreamer: DFSClient seqno: 11 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:28 TRACE package$ExpressionCanonicalizer: Fixed point reached for batch CleanExpressions after 1 iterations.
+23/11/10 17:21:28 TRACE PlanChangeLogger: Batch CleanExpressions has no effect.
+23/11/10 17:21:28 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 1
+Total time: 5.057E-6 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+      
+23/11/10 17:21:28 DEBUG GenerateUnsafeProjection: code for input[0, int, false]:
+/* 001 */ public java.lang.Object generate(Object[] references) {
+/* 002 */   return new SpecificUnsafeProjection(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ class SpecificUnsafeProjection extends org.apache.spark.sql.catalyst.expressions.UnsafeProjection {
+/* 006 */
+/* 007 */   private Object[] references;
+/* 008 */   private org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[] mutableStateArray_0 = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[1];
+/* 009 */
+/* 010 */   public SpecificUnsafeProjection(Object[] references) {
+/* 011 */     this.references = references;
+/* 012 */     mutableStateArray_0[0] = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter(1, 0);
+/* 013 */
+/* 014 */   }
+/* 015 */
+/* 016 */   public void initialize(int partitionIndex) {
+/* 017 */
+/* 018 */   }
+/* 019 */
+/* 020 */   // Scala.Function1 need this
+/* 021 */   public java.lang.Object apply(java.lang.Object row) {
+/* 022 */     return apply((InternalRow) row);
+/* 023 */   }
+/* 024 */
+/* 025 */   public UnsafeRow apply(InternalRow i) {
+/* 026 */     mutableStateArray_0[0].reset();
+/* 027 */
+/* 028 */
+/* 029 */
+/* 030 */
+/* 031 */     int value_0 = i.getInt(0);
+/* 032 */     mutableStateArray_0[0].write(0, value_0);
+/* 033 */     return (mutableStateArray_0[0].getRow());
+/* 034 */   }
+/* 035 */
+/* 036 */
+/* 037 */ }
+
+23/11/10 17:21:28 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$doExecute$1
+23/11/10 17:21:28 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$doExecute$1) is now cleaned +++
+23/11/10 17:21:28 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$collect$2
+23/11/10 17:21:28 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$collect$2) is now cleaned +++
+23/11/10 17:21:28 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$runJob$5
+23/11/10 17:21:28 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$runJob$5) is now cleaned +++
+23/11/10 17:21:28 INFO SparkContext: Starting job: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:266
+23/11/10 17:21:28 DEBUG DAGScheduler: eagerlyComputePartitionsForRddAndAncestors for RDD 2 took 0.000471 seconds
+23/11/10 17:21:28 DEBUG DAGScheduler: Merging stage rdd profiles: Set()
+23/11/10 17:21:28 INFO DAGScheduler: Got job 0 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:266) with 3 output partitions
+23/11/10 17:21:28 INFO DAGScheduler: Final stage: ResultStage 0 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:266)
+23/11/10 17:21:28 INFO DAGScheduler: Parents of final stage: List()
+23/11/10 17:21:28 INFO DAGScheduler: Missing parents: List()
+23/11/10 17:21:28 DEBUG DAGScheduler: submitStage(ResultStage 0 (name=$anonfun$withThreadLocalCaptured$1 at FutureTask.java:266;jobs=0))
+23/11/10 17:21:28 DEBUG DAGScheduler: missing: List()
+23/11/10 17:21:28 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[2] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:266), which has no missing parents
+23/11/10 17:21:28 DEBUG DAGScheduler: submitMissingTasks(ResultStage 0)
+23/11/10 17:21:28 DEBUG DFSClient: WriteChunk allocating new packet seqno=12, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=101888, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:28 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=106548, lastFlushOffset=101908, createNewBlock=false
+23/11/10 17:21:28 DEBUG DataStreamer: Queued packet seqno: 12 offsetInBlock: 101888 lastPacketInBlock: false lastByteOffsetInBlock: 106548, blk_1073742678_1859
+23/11/10 17:21:28 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 12
+23/11/10 17:21:28 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:28 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 12 offsetInBlock: 101888 lastPacketInBlock: false lastByteOffsetInBlock: 106548
+23/11/10 17:21:28 DEBUG DataStreamer: DFSClient seqno: 12 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:28 TRACE BlockInfoManager: Task -1024 trying to put broadcast_0
+23/11/10 17:21:28 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_0
+23/11/10 17:21:28 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_0
+23/11/10 17:21:28 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 5.2 KiB, free 366.3 MiB)
+23/11/10 17:21:28 DEBUG BlockManager: Put block broadcast_0 locally took 12 ms
+23/11/10 17:21:28 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_0
+23/11/10 17:21:28 DEBUG BlockManager: Putting block broadcast_0 without replication took 12 ms
+23/11/10 17:21:28 TRACE BlockInfoManager: Task -1024 trying to put broadcast_0_piece0
+23/11/10 17:21:28 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_0_piece0
+23/11/10 17:21:28 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_0_piece0
+23/11/10 17:21:28 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 2.9 KiB, free 366.3 MiB)
+23/11/10 17:21:28 DEBUG BlockManagerMasterEndpoint: Updating block info on master broadcast_0_piece0 for BlockManagerId(driver, Jiahao, 42265, None)
+23/11/10 17:21:28 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on Jiahao:42265 (size: 2.9 KiB, free: 366.3 MiB)
+23/11/10 17:21:28 DEBUG BlockManagerMaster: Updated info of block broadcast_0_piece0
+23/11/10 17:21:28 DEBUG BlockManager: Told master about block broadcast_0_piece0
+23/11/10 17:21:28 DEBUG BlockManager: Put block broadcast_0_piece0 locally took 4 ms
+23/11/10 17:21:28 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_0_piece0
+23/11/10 17:21:28 DEBUG BlockManager: Putting block broadcast_0_piece0 without replication took 4 ms
+23/11/10 17:21:28 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1513
+23/11/10 17:21:28 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 0 (MapPartitionsRDD[2] at $anonfun$withThreadLocalCaptured$1 at FutureTask.java:266) (first 15 tasks are for partitions Vector(0, 1, 2))
+23/11/10 17:21:28 INFO TaskSchedulerImpl: Adding task set 0.0 with 3 tasks resource profile 0
+23/11/10 17:21:28 DEBUG TaskSetManager: Epoch for TaskSet 0.0: 0
+23/11/10 17:21:28 DEBUG TaskSetManager: Adding pending tasks took 1 ms
+23/11/10 17:21:28 DEBUG TaskSetManager: Valid locality levels for TaskSet 0.0: NO_PREF, ANY
+23/11/10 17:21:28 DEBUG TaskSchedulerImpl: parentName: , name: TaskSet_0.0, runningTasks: 0
+23/11/10 17:21:28 DEBUG TaskSetManager: Valid locality levels for TaskSet 0.0: NO_PREF, ANY
+23/11/10 17:21:28 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (Jiahao, executor driver, partition 0, PROCESS_LOCAL, 4625 bytes) taskResourceAssignments Map()
+23/11/10 17:21:28 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (Jiahao, executor driver, partition 1, PROCESS_LOCAL, 4625 bytes) taskResourceAssignments Map()
+23/11/10 17:21:28 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (Jiahao, executor driver, partition 2, PROCESS_LOCAL, 4625 bytes) taskResourceAssignments Map()
+23/11/10 17:21:28 DEBUG TaskSetManager: No tasks for locality level NO_PREF, so moving to locality level ANY
+23/11/10 17:21:28 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+23/11/10 17:21:28 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+23/11/10 17:21:28 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+23/11/10 17:21:28 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 2
+23/11/10 17:21:28 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 1
+23/11/10 17:21:28 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 3
+23/11/10 17:21:28 DEBUG BlockManager: Getting local block broadcast_0
+23/11/10 17:21:28 TRACE BlockInfoManager: Task 0 trying to acquire read lock for broadcast_0
+23/11/10 17:21:28 TRACE BlockInfoManager: Task 0 acquired read lock for broadcast_0
+23/11/10 17:21:28 DEBUG BlockManager: Level for block broadcast_0 is StorageLevel(disk, memory, deserialized, 1 replicas)
+23/11/10 17:21:29 TRACE BlockInfoManager: Task 0 releasing lock for broadcast_0
+23/11/10 17:21:29 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1339 bytes result sent to driver
+23/11/10 17:21:29 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 1339 bytes result sent to driver
+23/11/10 17:21:29 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1339 bytes result sent to driver
+23/11/10 17:21:29 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 2
+23/11/10 17:21:29 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 1
+23/11/10 17:21:29 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 0
+23/11/10 17:21:29 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 167 ms on Jiahao (executor driver) (1/3)
+23/11/10 17:21:29 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 184 ms on Jiahao (executor driver) (2/3)
+23/11/10 17:21:29 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 168 ms on Jiahao (executor driver) (3/3)
+23/11/10 17:21:29 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+23/11/10 17:21:29 INFO DAGScheduler: ResultStage 0 ($anonfun$withThreadLocalCaptured$1 at FutureTask.java:266) finished in 0.281 s
+23/11/10 17:21:29 DEBUG DAGScheduler: After removal of stage 0, remaining stages = 0
+23/11/10 17:21:29 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+23/11/10 17:21:29 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+23/11/10 17:21:29 INFO DAGScheduler: Job 0 finished: $anonfun$withThreadLocalCaptured$1 at FutureTask.java:266, took 0.303113 s
+23/11/10 17:21:29 DEBUG DFSClient: WriteChunk allocating new packet seqno=13, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=106496, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=121920, lastFlushOffset=106548, createNewBlock=false
+23/11/10 17:21:29 DEBUG DataStreamer: Queued packet seqno: 13 offsetInBlock: 106496 lastPacketInBlock: false lastByteOffsetInBlock: 121920, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 13
+23/11/10 17:21:29 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 13 offsetInBlock: 106496 lastPacketInBlock: false lastByteOffsetInBlock: 121920
+23/11/10 17:21:29 DEBUG DataStreamer: DFSClient seqno: 13 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:29 DEBUG TaskMemoryManager: Task 0 acquired 1024.1 KiB for org.apache.spark.sql.execution.joins.LongToUnsafeRowMap@5400d6b5
+23/11/10 17:21:29 TRACE package$ExpressionCanonicalizer: Fixed point reached for batch CleanExpressions after 1 iterations.
+23/11/10 17:21:29 TRACE PlanChangeLogger: Batch CleanExpressions has no effect.
+23/11/10 17:21:29 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 1
+Total time: 1.0048E-5 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+      
+23/11/10 17:21:29 DEBUG DFSClient: WriteChunk allocating new packet seqno=14, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=121856, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=122034, lastFlushOffset=121920, createNewBlock=false
+23/11/10 17:21:29 DEBUG DataStreamer: Queued packet seqno: 14 offsetInBlock: 121856 lastPacketInBlock: false lastByteOffsetInBlock: 122034, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 14
+23/11/10 17:21:29 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 14 offsetInBlock: 121856 lastPacketInBlock: false lastByteOffsetInBlock: 122034
+23/11/10 17:21:29 DEBUG DataStreamer: DFSClient seqno: 14 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:29 DEBUG GenerateUnsafeProjection: code for cast(input[0, int, false] as bigint):
+/* 001 */ public java.lang.Object generate(Object[] references) {
+/* 002 */   return new SpecificUnsafeProjection(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ class SpecificUnsafeProjection extends org.apache.spark.sql.catalyst.expressions.UnsafeProjection {
+/* 006 */
+/* 007 */   private Object[] references;
+/* 008 */   private org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[] mutableStateArray_0 = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[1];
+/* 009 */
+/* 010 */   public SpecificUnsafeProjection(Object[] references) {
+/* 011 */     this.references = references;
+/* 012 */     mutableStateArray_0[0] = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter(1, 0);
+/* 013 */
+/* 014 */   }
+/* 015 */
+/* 016 */   public void initialize(int partitionIndex) {
+/* 017 */
+/* 018 */   }
+/* 019 */
+/* 020 */   // Scala.Function1 need this
+/* 021 */   public java.lang.Object apply(java.lang.Object row) {
+/* 022 */     return apply((InternalRow) row);
+/* 023 */   }
+/* 024 */
+/* 025 */   public UnsafeRow apply(InternalRow i) {
+/* 026 */     mutableStateArray_0[0].reset();
+/* 027 */
+/* 028 */
+/* 029 */     mutableStateArray_0[0].zeroOutNullBytes();
+/* 030 */
+/* 031 */     int value_1 = i.getInt(0);
+/* 032 */     boolean isNull_0 = false;
+/* 033 */     long value_0 = -1L;
+/* 034 */     if (!false) {
+/* 035 */       value_0 = (long) value_1;
+/* 036 */     }
+/* 037 */     mutableStateArray_0[0].write(0, value_0);
+/* 038 */     return (mutableStateArray_0[0].getRow());
+/* 039 */   }
+/* 040 */
+/* 041 */
+/* 042 */ }
+
+23/11/10 17:21:29 DEBUG CodeGenerator: 
+/* 001 */ public java.lang.Object generate(Object[] references) {
+/* 002 */   return new SpecificUnsafeProjection(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ class SpecificUnsafeProjection extends org.apache.spark.sql.catalyst.expressions.UnsafeProjection {
+/* 006 */
+/* 007 */   private Object[] references;
+/* 008 */   private org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[] mutableStateArray_0 = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[1];
+/* 009 */
+/* 010 */   public SpecificUnsafeProjection(Object[] references) {
+/* 011 */     this.references = references;
+/* 012 */     mutableStateArray_0[0] = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter(1, 0);
+/* 013 */
+/* 014 */   }
+/* 015 */
+/* 016 */   public void initialize(int partitionIndex) {
+/* 017 */
+/* 018 */   }
+/* 019 */
+/* 020 */   // Scala.Function1 need this
+/* 021 */   public java.lang.Object apply(java.lang.Object row) {
+/* 022 */     return apply((InternalRow) row);
+/* 023 */   }
+/* 024 */
+/* 025 */   public UnsafeRow apply(InternalRow i) {
+/* 026 */     mutableStateArray_0[0].reset();
+/* 027 */
+/* 028 */
+/* 029 */     mutableStateArray_0[0].zeroOutNullBytes();
+/* 030 */
+/* 031 */     int value_1 = i.getInt(0);
+/* 032 */     boolean isNull_0 = false;
+/* 033 */     long value_0 = -1L;
+/* 034 */     if (!false) {
+/* 035 */       value_0 = (long) value_1;
+/* 036 */     }
+/* 037 */     mutableStateArray_0[0].write(0, value_0);
+/* 038 */     return (mutableStateArray_0[0].getRow());
+/* 039 */   }
+/* 040 */
+/* 041 */
+/* 042 */ }
+
+23/11/10 17:21:29 INFO CodeGenerator: Code generated in 9.263626 ms
+23/11/10 17:21:29 DEBUG TaskMemoryManager: Task 0 acquired 128.0 B for org.apache.spark.sql.execution.joins.LongToUnsafeRowMap@5400d6b5
+23/11/10 17:21:29 DEBUG TaskMemoryManager: Task 0 release 64.0 B from org.apache.spark.sql.execution.joins.LongToUnsafeRowMap@5400d6b5
+23/11/10 17:21:29 DEBUG TaskMemoryManager: Task 0 acquired 24.0 B for org.apache.spark.sql.execution.joins.LongToUnsafeRowMap@5400d6b5
+23/11/10 17:21:29 DEBUG TaskMemoryManager: Task 0 release 128.0 B from org.apache.spark.sql.execution.joins.LongToUnsafeRowMap@5400d6b5
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 trying to put broadcast_1
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_1
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_1
+23/11/10 17:21:29 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 1024.0 KiB, free 365.3 MiB)
+23/11/10 17:21:29 DEBUG BlockManager: Put block broadcast_1 locally took 0 ms
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_1
+23/11/10 17:21:29 DEBUG BlockManager: Putting block broadcast_1 without replication took 0 ms
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 trying to put broadcast_1_piece0
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_1_piece0
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_1_piece0
+23/11/10 17:21:29 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 222.0 B, free 365.3 MiB)
+23/11/10 17:21:29 DEBUG BlockManagerMasterEndpoint: Updating block info on master broadcast_1_piece0 for BlockManagerId(driver, Jiahao, 42265, None)
+23/11/10 17:21:29 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on Jiahao:42265 (size: 222.0 B, free: 366.3 MiB)
+23/11/10 17:21:29 DEBUG BlockManagerMaster: Updated info of block broadcast_1_piece0
+23/11/10 17:21:29 DEBUG BlockManager: Told master about block broadcast_1_piece0
+23/11/10 17:21:29 DEBUG BlockManager: Put block broadcast_1_piece0 locally took 0 ms
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_1_piece0
+23/11/10 17:21:29 DEBUG BlockManager: Putting block broadcast_1_piece0 without replication took 0 ms
+23/11/10 17:21:29 INFO SparkContext: Created broadcast 1 from $anonfun$withThreadLocalCaptured$1 at FutureTask.java:266
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(26)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 26
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 26
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(27)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 27
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 27
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(29)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 29
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 29
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(15)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 15
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 15
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(25)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 25
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 25
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(13)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 13
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 13
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(31)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 31
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 31
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(12)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 12
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 12
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(19)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 19
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 19
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(9)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 9
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 9
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(32)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 32
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 32
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanBroadcast(0)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning broadcast 0
+23/11/10 17:21:29 DEBUG TorrentBroadcast: Unpersisting TorrentBroadcast 0
+23/11/10 17:21:29 DEBUG DFSClient: WriteChunk allocating new packet seqno=15, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=121856, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=122184, lastFlushOffset=122034, createNewBlock=false
+23/11/10 17:21:29 DEBUG DataStreamer: Queued packet seqno: 15 offsetInBlock: 121856 lastPacketInBlock: false lastByteOffsetInBlock: 122184, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 15
+23/11/10 17:21:29 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 15 offsetInBlock: 121856 lastPacketInBlock: false lastByteOffsetInBlock: 122184
+23/11/10 17:21:29 DEBUG DataStreamer: DFSClient seqno: 15 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:29 DEBUG BlockManagerStorageEndpoint: removing broadcast 0
+23/11/10 17:21:29 DEBUG BlockManager: Removing broadcast 0
+23/11/10 17:21:29 DEBUG BlockManager: Removing block broadcast_0_piece0
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_0_piece0
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_0_piece0
+23/11/10 17:21:29 DEBUG MemoryStore: Block broadcast_0_piece0 of size 2935 dropped from memory (free 383039182)
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 trying to remove block broadcast_0_piece0
+23/11/10 17:21:29 DEBUG BlockManagerMasterEndpoint: Updating block info on master broadcast_0_piece0 for BlockManagerId(driver, Jiahao, 42265, None)
+23/11/10 17:21:29 INFO BlockManagerInfo: Removed broadcast_0_piece0 on Jiahao:42265 in memory (size: 2.9 KiB, free: 366.3 MiB)
+23/11/10 17:21:29 DEBUG BlockManagerMaster: Updated info of block broadcast_0_piece0
+23/11/10 17:21:29 DEBUG BlockManager: Told master about block broadcast_0_piece0
+23/11/10 17:21:29 DEBUG BlockManager: Removing block broadcast_0
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_0
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_0
+23/11/10 17:21:29 DEBUG MemoryStore: Block broadcast_0 of size 5360 dropped from memory (free 383044542)
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 trying to remove block broadcast_0
+23/11/10 17:21:29 DEBUG BlockManagerStorageEndpoint: Done removing broadcast 0, response is 0
+23/11/10 17:21:29 TRACE AQEOptimizer: Fixed point reached for batch Propagate Empty Relations after 1 iterations.
+23/11/10 17:21:29 DEBUG BlockManagerStorageEndpoint: Sent response: 0 to Jiahao:32941
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned broadcast 0
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(21)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 21
+23/11/10 17:21:29 TRACE PlanChangeLogger: Batch Propagate Empty Relations has no effect.
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 21
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(33)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 33
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 33
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(10)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 10
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 10
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(16)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 16
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 16
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(22)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 22
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 22
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(28)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 28
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 28
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(17)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 17
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 17
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(18)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 18
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 18
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(11)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 11
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 11
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(14)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 14
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 14
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(30)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 30
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 30
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(23)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 23
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 23
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(24)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 24
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 24
+23/11/10 17:21:29 DEBUG ContextCleaner: Got cleaning task CleanAccum(20)
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaning accumulator 20
+23/11/10 17:21:29 DEBUG ContextCleaner: Cleaned accumulator 20
+23/11/10 17:21:29 DEBUG ExtractEquiJoinKeys: Considering join on: Some((t_col#4 = s_col#10))
+23/11/10 17:21:29 DEBUG ExtractEquiJoinKeys: leftKeys:List(t_col#4) | rightKeys:List(s_col#10)
+23/11/10 17:21:29 TRACE AQEOptimizer: Fixed point reached for batch Dynamic Join Selection after 1 iterations.
+23/11/10 17:21:29 TRACE PlanChangeLogger: Batch Dynamic Join Selection has no effect.
+23/11/10 17:21:29 TRACE AQEOptimizer: Fixed point reached for batch Eliminate Limits after 1 iterations.
+23/11/10 17:21:29 TRACE PlanChangeLogger: Batch Eliminate Limits has no effect.
+23/11/10 17:21:29 TRACE AQEOptimizer: Fixed point reached for batch Optimize One Row Plan after 1 iterations.
+23/11/10 17:21:29 TRACE PlanChangeLogger: Batch Optimize One Row Plan has no effect.
+23/11/10 17:21:29 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 6
+Total time: 0.002228452 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+      
+23/11/10 17:21:29 DEBUG ExtractEquiJoinKeys: Considering join on: Some((t_col#4 = s_col#10))
+23/11/10 17:21:29 DEBUG ExtractEquiJoinKeys: leftKeys:List(t_col#4) | rightKeys:List(s_col#10)
+23/11/10 17:21:29 TRACE PlanChangeLogger: Batch AQE Replanning has no effect.
+23/11/10 17:21:29 TRACE PlanChangeLogger: Batch AQE Query Stage Optimization has no effect.
+23/11/10 17:21:29 TRACE PlanChangeLogger: 
+=== Applying Rule org.apache.spark.sql.execution.CollapseCodegenStages ===
+!BroadcastHashJoin [t_col#4], [s_col#10], Inner, BuildLeft, false                                                  *(1) BroadcastHashJoin [t_col#4], [s_col#10], Inner, BuildLeft, false
+ :- BroadcastQueryStage 0                                                                                          :- BroadcastQueryStage 0
+ :  +- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, false] as bigint)),false), [id=#18]   :  +- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, false] as bigint)),false), [id=#18]
+ :     +- LocalTableScan [t_col#4]                                                                                 :     +- LocalTableScan [t_col#4]
+!+- LocalTableScan [s_col#10]                                                                                      +- *(1) LocalTableScan [s_col#10]
+           
+23/11/10 17:21:29 TRACE PlanChangeLogger: 
+=== Result of Batch AQE Post Stage Creation ===
+!BroadcastHashJoin [t_col#4], [s_col#10], Inner, BuildLeft, false                                                  *(1) BroadcastHashJoin [t_col#4], [s_col#10], Inner, BuildLeft, false
+ :- BroadcastQueryStage 0                                                                                          :- BroadcastQueryStage 0
+ :  +- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, false] as bigint)),false), [id=#18]   :  +- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, false] as bigint)),false), [id=#18]
+ :     +- LocalTableScan [t_col#4]                                                                                 :     +- LocalTableScan [t_col#4]
+!+- LocalTableScan [s_col#10]                                                                                      +- *(1) LocalTableScan [s_col#10]
+          
+23/11/10 17:21:29 DEBUG DFSClient: WriteChunk allocating new packet seqno=16, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=121856, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=125045, lastFlushOffset=122184, createNewBlock=false
+23/11/10 17:21:29 DEBUG DataStreamer: Queued packet seqno: 16 offsetInBlock: 121856 lastPacketInBlock: false lastByteOffsetInBlock: 125045, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 16
+23/11/10 17:21:29 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 16 offsetInBlock: 121856 lastPacketInBlock: false lastByteOffsetInBlock: 125045
+23/11/10 17:21:29 DEBUG DataStreamer: DFSClient seqno: 16 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:29 DEBUG BlockManager: Getting local block broadcast_1
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 trying to acquire read lock for broadcast_1
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 acquired read lock for broadcast_1
+23/11/10 17:21:29 DEBUG BlockManager: Level for block broadcast_1 is StorageLevel(disk, memory, deserialized, 1 replicas)
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_1
+23/11/10 17:21:29 DEBUG WholeStageCodegenExec: 
+/* 001 */ public Object generate(Object[] references) {
+/* 002 */   return new GeneratedIteratorForCodegenStage1(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ // codegenStageId=1
+/* 006 */ final class GeneratedIteratorForCodegenStage1 extends org.apache.spark.sql.execution.BufferedRowIterator {
+/* 007 */   private Object[] references;
+/* 008 */   private scala.collection.Iterator[] inputs;
+/* 009 */   private scala.collection.Iterator localtablescan_input_0;
+/* 010 */   private org.apache.spark.sql.execution.joins.LongHashedRelation bhj_relation_0;
+/* 011 */   private org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[] bhj_mutableStateArray_0 = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[1];
+/* 012 */
+/* 013 */   public GeneratedIteratorForCodegenStage1(Object[] references) {
+/* 014 */     this.references = references;
+/* 015 */   }
+/* 016 */
+/* 017 */   public void init(int index, scala.collection.Iterator[] inputs) {
+/* 018 */     partitionIndex = index;
+/* 019 */     this.inputs = inputs;
+/* 020 */     localtablescan_input_0 = inputs[0];
+/* 021 */
+/* 022 */     bhj_relation_0 = ((org.apache.spark.sql.execution.joins.LongHashedRelation) ((org.apache.spark.broadcast.TorrentBroadcast) references[1] /* broadcast */).value()).asReadOnlyCopy();
+/* 023 */     incPeakExecutionMemory(bhj_relation_0.estimatedSize());
+/* 024 */
+/* 025 */     bhj_mutableStateArray_0[0] = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter(2, 0);
+/* 026 */
+/* 027 */   }
+/* 028 */
+/* 029 */   private void bhj_doConsume_0(InternalRow localtablescan_row_0, int bhj_expr_0_0) throws java.io.IOException {
+/* 030 */     // generate join key for stream side
+/* 031 */     boolean bhj_isNull_0 = false;
+/* 032 */     long bhj_value_0 = -1L;
+/* 033 */     if (!false) {
+/* 034 */       bhj_value_0 = (long) bhj_expr_0_0;
+/* 035 */     }
+/* 036 */     // find matches from HashedRelation
+/* 037 */     UnsafeRow bhj_buildRow_0 = bhj_isNull_0 ? null: (UnsafeRow)bhj_relation_0.getValue(bhj_value_0);
+/* 038 */     if (bhj_buildRow_0 != null) {
+/* 039 */       {
+/* 040 */         ((org.apache.spark.sql.execution.metric.SQLMetric) references[2] /* numOutputRows */).add(1);
+/* 041 */
+/* 042 */         int bhj_value_2 = bhj_buildRow_0.getInt(0);
+/* 043 */         bhj_mutableStateArray_0[0].reset();
+/* 044 */
+/* 045 */         bhj_mutableStateArray_0[0].write(0, bhj_value_2);
+/* 046 */
+/* 047 */         bhj_mutableStateArray_0[0].write(1, bhj_expr_0_0);
+/* 048 */         append((bhj_mutableStateArray_0[0].getRow()));
+/* 049 */
+/* 050 */       }
+/* 051 */     }
+/* 052 */
+/* 053 */   }
+/* 054 */
+/* 055 */   protected void processNext() throws java.io.IOException {
+/* 056 */     while ( localtablescan_input_0.hasNext()) {
+/* 057 */       InternalRow localtablescan_row_0 = (InternalRow) localtablescan_input_0.next();
+/* 058 */       ((org.apache.spark.sql.execution.metric.SQLMetric) references[0] /* numOutputRows */).add(1);
+/* 059 */       int localtablescan_value_0 = localtablescan_row_0.getInt(0);
+/* 060 */
+/* 061 */       bhj_doConsume_0(localtablescan_row_0, localtablescan_value_0);
+/* 062 */       if (shouldStop()) return;
+/* 063 */     }
+/* 064 */   }
+/* 065 */
+/* 066 */ }
+
+23/11/10 17:21:29 DEBUG CodeGenerator: 
+/* 001 */ public Object generate(Object[] references) {
+/* 002 */   return new GeneratedIteratorForCodegenStage1(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ // codegenStageId=1
+/* 006 */ final class GeneratedIteratorForCodegenStage1 extends org.apache.spark.sql.execution.BufferedRowIterator {
+/* 007 */   private Object[] references;
+/* 008 */   private scala.collection.Iterator[] inputs;
+/* 009 */   private scala.collection.Iterator localtablescan_input_0;
+/* 010 */   private org.apache.spark.sql.execution.joins.LongHashedRelation bhj_relation_0;
+/* 011 */   private org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[] bhj_mutableStateArray_0 = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[1];
+/* 012 */
+/* 013 */   public GeneratedIteratorForCodegenStage1(Object[] references) {
+/* 014 */     this.references = references;
+/* 015 */   }
+/* 016 */
+/* 017 */   public void init(int index, scala.collection.Iterator[] inputs) {
+/* 018 */     partitionIndex = index;
+/* 019 */     this.inputs = inputs;
+/* 020 */     localtablescan_input_0 = inputs[0];
+/* 021 */
+/* 022 */     bhj_relation_0 = ((org.apache.spark.sql.execution.joins.LongHashedRelation) ((org.apache.spark.broadcast.TorrentBroadcast) references[1] /* broadcast */).value()).asReadOnlyCopy();
+/* 023 */     incPeakExecutionMemory(bhj_relation_0.estimatedSize());
+/* 024 */
+/* 025 */     bhj_mutableStateArray_0[0] = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter(2, 0);
+/* 026 */
+/* 027 */   }
+/* 028 */
+/* 029 */   private void bhj_doConsume_0(InternalRow localtablescan_row_0, int bhj_expr_0_0) throws java.io.IOException {
+/* 030 */     // generate join key for stream side
+/* 031 */     boolean bhj_isNull_0 = false;
+/* 032 */     long bhj_value_0 = -1L;
+/* 033 */     if (!false) {
+/* 034 */       bhj_value_0 = (long) bhj_expr_0_0;
+/* 035 */     }
+/* 036 */     // find matches from HashedRelation
+/* 037 */     UnsafeRow bhj_buildRow_0 = bhj_isNull_0 ? null: (UnsafeRow)bhj_relation_0.getValue(bhj_value_0);
+/* 038 */     if (bhj_buildRow_0 != null) {
+/* 039 */       {
+/* 040 */         ((org.apache.spark.sql.execution.metric.SQLMetric) references[2] /* numOutputRows */).add(1);
+/* 041 */
+/* 042 */         int bhj_value_2 = bhj_buildRow_0.getInt(0);
+/* 043 */         bhj_mutableStateArray_0[0].reset();
+/* 044 */
+/* 045 */         bhj_mutableStateArray_0[0].write(0, bhj_value_2);
+/* 046 */
+/* 047 */         bhj_mutableStateArray_0[0].write(1, bhj_expr_0_0);
+/* 048 */         append((bhj_mutableStateArray_0[0].getRow()));
+/* 049 */
+/* 050 */       }
+/* 051 */     }
+/* 052 */
+/* 053 */   }
+/* 054 */
+/* 055 */   protected void processNext() throws java.io.IOException {
+/* 056 */     while ( localtablescan_input_0.hasNext()) {
+/* 057 */       InternalRow localtablescan_row_0 = (InternalRow) localtablescan_input_0.next();
+/* 058 */       ((org.apache.spark.sql.execution.metric.SQLMetric) references[0] /* numOutputRows */).add(1);
+/* 059 */       int localtablescan_value_0 = localtablescan_row_0.getInt(0);
+/* 060 */
+/* 061 */       bhj_doConsume_0(localtablescan_row_0, localtablescan_value_0);
+/* 062 */       if (shouldStop()) return;
+/* 063 */     }
+/* 064 */   }
+/* 065 */
+/* 066 */ }
+
+23/11/10 17:21:29 INFO CodeGenerator: Code generated in 12.26422 ms
+23/11/10 17:21:29 TRACE package$ExpressionCanonicalizer: Fixed point reached for batch CleanExpressions after 1 iterations.
+23/11/10 17:21:29 TRACE PlanChangeLogger: Batch CleanExpressions has no effect.
+23/11/10 17:21:29 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 1
+Total time: 4.706E-6 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+      
+23/11/10 17:21:29 DEBUG GenerateUnsafeProjection: code for input[0, int, false]:
+/* 001 */ public java.lang.Object generate(Object[] references) {
+/* 002 */   return new SpecificUnsafeProjection(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ class SpecificUnsafeProjection extends org.apache.spark.sql.catalyst.expressions.UnsafeProjection {
+/* 006 */
+/* 007 */   private Object[] references;
+/* 008 */   private org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[] mutableStateArray_0 = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[1];
+/* 009 */
+/* 010 */   public SpecificUnsafeProjection(Object[] references) {
+/* 011 */     this.references = references;
+/* 012 */     mutableStateArray_0[0] = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter(1, 0);
+/* 013 */
+/* 014 */   }
+/* 015 */
+/* 016 */   public void initialize(int partitionIndex) {
+/* 017 */
+/* 018 */   }
+/* 019 */
+/* 020 */   // Scala.Function1 need this
+/* 021 */   public java.lang.Object apply(java.lang.Object row) {
+/* 022 */     return apply((InternalRow) row);
+/* 023 */   }
+/* 024 */
+/* 025 */   public UnsafeRow apply(InternalRow i) {
+/* 026 */     mutableStateArray_0[0].reset();
+/* 027 */
+/* 028 */
+/* 029 */
+/* 030 */
+/* 031 */     int value_0 = i.getInt(0);
+/* 032 */     mutableStateArray_0[0].write(0, value_0);
+/* 033 */     return (mutableStateArray_0[0].getRow());
+/* 034 */   }
+/* 035 */
+/* 036 */
+/* 037 */ }
+
+23/11/10 17:21:29 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$doExecute$4$adapted
+23/11/10 17:21:29 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$doExecute$4$adapted) is now cleaned +++
+23/11/10 17:21:29 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$collect$2
+23/11/10 17:21:29 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$collect$2) is now cleaned +++
+23/11/10 17:21:29 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$runJob$5
+23/11/10 17:21:29 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$runJob$5) is now cleaned +++
+23/11/10 17:21:29 INFO SparkContext: Starting job: collect at /home/dbgroup/Documents/Code/Research/qotrace/qotrace-misc/spark-program/spark-scripts/bug4-1/Bug4_1.scala:38
+23/11/10 17:21:29 DEBUG DAGScheduler: eagerlyComputePartitionsForRddAndAncestors for RDD 5 took 0.000041 seconds
+23/11/10 17:21:29 DEBUG DAGScheduler: Merging stage rdd profiles: Set()
+23/11/10 17:21:29 INFO DAGScheduler: Got job 1 (collect at /home/dbgroup/Documents/Code/Research/qotrace/qotrace-misc/spark-program/spark-scripts/bug4-1/Bug4_1.scala:38) with 3 output partitions
+23/11/10 17:21:29 INFO DAGScheduler: Final stage: ResultStage 1 (collect at /home/dbgroup/Documents/Code/Research/qotrace/qotrace-misc/spark-program/spark-scripts/bug4-1/Bug4_1.scala:38)
+23/11/10 17:21:29 INFO DAGScheduler: Parents of final stage: List()
+23/11/10 17:21:29 INFO DAGScheduler: Missing parents: List()
+23/11/10 17:21:29 DEBUG DAGScheduler: submitStage(ResultStage 1 (name=collect at /home/dbgroup/Documents/Code/Research/qotrace/qotrace-misc/spark-program/spark-scripts/bug4-1/Bug4_1.scala:38;jobs=1))
+23/11/10 17:21:29 DEBUG DAGScheduler: missing: List()
+23/11/10 17:21:29 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[5] at collect at /home/dbgroup/Documents/Code/Research/qotrace/qotrace-misc/spark-program/spark-scripts/bug4-1/Bug4_1.scala:38), which has no missing parents
+23/11/10 17:21:29 DEBUG DAGScheduler: submitMissingTasks(ResultStage 1)
+23/11/10 17:21:29 DEBUG DFSClient: WriteChunk allocating new packet seqno=17, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=124928, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=131918, lastFlushOffset=125045, createNewBlock=false
+23/11/10 17:21:29 DEBUG DataStreamer: Queued packet seqno: 17 offsetInBlock: 124928 lastPacketInBlock: false lastByteOffsetInBlock: 131918, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 17
+23/11/10 17:21:29 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 17 offsetInBlock: 124928 lastPacketInBlock: false lastByteOffsetInBlock: 131918
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 trying to put broadcast_2
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_2
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_2
+23/11/10 17:21:29 DEBUG DataStreamer: DFSClient seqno: 17 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:29 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 8.8 KiB, free 365.3 MiB)
+23/11/10 17:21:29 DEBUG BlockManager: Put block broadcast_2 locally took 0 ms
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_2
+23/11/10 17:21:29 DEBUG BlockManager: Putting block broadcast_2 without replication took 0 ms
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 trying to put broadcast_2_piece0
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 trying to acquire write lock for broadcast_2_piece0
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 acquired write lock for broadcast_2_piece0
+23/11/10 17:21:29 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 4.5 KiB, free 365.3 MiB)
+23/11/10 17:21:29 DEBUG BlockManagerMasterEndpoint: Updating block info on master broadcast_2_piece0 for BlockManagerId(driver, Jiahao, 42265, None)
+23/11/10 17:21:29 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on Jiahao:42265 (size: 4.5 KiB, free: 366.3 MiB)
+23/11/10 17:21:29 DEBUG BlockManagerMaster: Updated info of block broadcast_2_piece0
+23/11/10 17:21:29 DEBUG BlockManager: Told master about block broadcast_2_piece0
+23/11/10 17:21:29 DEBUG BlockManager: Put block broadcast_2_piece0 locally took 0 ms
+23/11/10 17:21:29 TRACE BlockInfoManager: Task -1024 releasing lock for broadcast_2_piece0
+23/11/10 17:21:29 DEBUG BlockManager: Putting block broadcast_2_piece0 without replication took 0 ms
+23/11/10 17:21:29 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1513
+23/11/10 17:21:29 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1 (MapPartitionsRDD[5] at collect at /home/dbgroup/Documents/Code/Research/qotrace/qotrace-misc/spark-program/spark-scripts/bug4-1/Bug4_1.scala:38) (first 15 tasks are for partitions Vector(0, 1, 2))
+23/11/10 17:21:29 INFO TaskSchedulerImpl: Adding task set 1.0 with 3 tasks resource profile 0
+23/11/10 17:21:29 DEBUG TaskSetManager: Epoch for TaskSet 1.0: 0
+23/11/10 17:21:29 DEBUG TaskSetManager: Adding pending tasks took 0 ms
+23/11/10 17:21:29 DEBUG TaskSetManager: Valid locality levels for TaskSet 1.0: NO_PREF, ANY
+23/11/10 17:21:29 DEBUG TaskSchedulerImpl: parentName: , name: TaskSet_1.0, runningTasks: 0
+23/11/10 17:21:29 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 3) (Jiahao, executor driver, partition 0, PROCESS_LOCAL, 4625 bytes) taskResourceAssignments Map()
+23/11/10 17:21:29 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 4) (Jiahao, executor driver, partition 1, PROCESS_LOCAL, 4625 bytes) taskResourceAssignments Map()
+23/11/10 17:21:29 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 5) (Jiahao, executor driver, partition 2, PROCESS_LOCAL, 4625 bytes) taskResourceAssignments Map()
+23/11/10 17:21:29 DEBUG TaskSetManager: No tasks for locality level NO_PREF, so moving to locality level ANY
+23/11/10 17:21:29 INFO Executor: Running task 0.0 in stage 1.0 (TID 3)
+23/11/10 17:21:29 INFO Executor: Running task 1.0 in stage 1.0 (TID 4)
+23/11/10 17:21:29 INFO Executor: Running task 2.0 in stage 1.0 (TID 5)
+23/11/10 17:21:29 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 1
+23/11/10 17:21:29 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 2
+23/11/10 17:21:29 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 3
+23/11/10 17:21:29 DEBUG BlockManager: Getting local block broadcast_2
+23/11/10 17:21:29 TRACE BlockInfoManager: Task 3 trying to acquire read lock for broadcast_2
+23/11/10 17:21:29 TRACE BlockInfoManager: Task 3 acquired read lock for broadcast_2
+23/11/10 17:21:29 DEBUG BlockManager: Level for block broadcast_2 is StorageLevel(disk, memory, deserialized, 1 replicas)
+23/11/10 17:21:29 TRACE BlockInfoManager: Task 3 releasing lock for broadcast_2
+23/11/10 17:21:29 INFO Executor: Finished task 0.0 in stage 1.0 (TID 3). 1507 bytes result sent to driver
+23/11/10 17:21:29 INFO Executor: Finished task 2.0 in stage 1.0 (TID 5). 1493 bytes result sent to driver
+23/11/10 17:21:29 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 2
+23/11/10 17:21:29 INFO Executor: Finished task 1.0 in stage 1.0 (TID 4). 1507 bytes result sent to driver
+23/11/10 17:21:29 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 1
+23/11/10 17:21:29 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 0
+23/11/10 17:21:29 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 3) in 10 ms on Jiahao (executor driver) (1/3)
+23/11/10 17:21:29 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 5) in 10 ms on Jiahao (executor driver) (2/3)
+23/11/10 17:21:29 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 4) in 10 ms on Jiahao (executor driver) (3/3)
+23/11/10 17:21:29 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+23/11/10 17:21:29 INFO DAGScheduler: ResultStage 1 (collect at /home/dbgroup/Documents/Code/Research/qotrace/qotrace-misc/spark-program/spark-scripts/bug4-1/Bug4_1.scala:38) finished in 0.014 s
+23/11/10 17:21:29 DEBUG DAGScheduler: After removal of stage 1, remaining stages = 0
+23/11/10 17:21:29 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+23/11/10 17:21:29 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+23/11/10 17:21:29 DEBUG DFSClient: WriteChunk allocating new packet seqno=18, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=131584, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:29 INFO DAGScheduler: Job 1 finished: collect at /home/dbgroup/Documents/Code/Research/qotrace/qotrace-misc/spark-program/spark-scripts/bug4-1/Bug4_1.scala:38, took 0.015877 s
+23/11/10 17:21:29 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=153235, lastFlushOffset=131918, createNewBlock=false
+23/11/10 17:21:29 DEBUG DataStreamer: Queued packet seqno: 18 offsetInBlock: 131584 lastPacketInBlock: false lastByteOffsetInBlock: 153235, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 18
+23/11/10 17:21:29 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 18 offsetInBlock: 131584 lastPacketInBlock: false lastByteOffsetInBlock: 153235
+23/11/10 17:21:29 DEBUG DataStreamer: DFSClient seqno: 18 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:29 DEBUG DFSClient: WriteChunk allocating new packet seqno=19, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=153088, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=153349, lastFlushOffset=153235, createNewBlock=false
+23/11/10 17:21:29 DEBUG DataStreamer: Queued packet seqno: 19 offsetInBlock: 153088 lastPacketInBlock: false lastByteOffsetInBlock: 153349, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 19
+23/11/10 17:21:29 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 19 offsetInBlock: 153088 lastPacketInBlock: false lastByteOffsetInBlock: 153349
+23/11/10 17:21:29 DEBUG AdaptiveSparkPlanExec: Final plan: *(1) BroadcastHashJoin [t_col#4], [s_col#10], Inner, BuildLeft, false
+:- BroadcastQueryStage 0
+:  +- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, false] as bigint)),false), [id=#18]
+:     +- LocalTableScan [t_col#4]
++- *(1) LocalTableScan [s_col#10]
+
+23/11/10 17:21:29 DEBUG DataStreamer: DFSClient seqno: 19 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:29 TRACE package$ExpressionCanonicalizer: Fixed point reached for batch CleanExpressions after 1 iterations.
+23/11/10 17:21:29 TRACE PlanChangeLogger: Batch CleanExpressions has no effect.
+23/11/10 17:21:29 TRACE PlanChangeLogger: 
+=== Metrics of Executed Rules ===
+Total number of runs: 1
+Total time: 1.5702E-5 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+      
+23/11/10 17:21:29 DEBUG GenerateSafeProjection: code for createexternalrow(input[0, int, false], input[1, int, false], StructField(t_col,IntegerType,false), StructField(s_col,IntegerType,false)):
+/* 001 */ public java.lang.Object generate(Object[] references) {
+/* 002 */   return new SpecificSafeProjection(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ class SpecificSafeProjection extends org.apache.spark.sql.catalyst.expressions.codegen.BaseProjection {
+/* 006 */
+/* 007 */   private Object[] references;
+/* 008 */   private InternalRow mutableRow;
+/* 009 */
+/* 010 */
+/* 011 */   public SpecificSafeProjection(Object[] references) {
+/* 012 */     this.references = references;
+/* 013 */     mutableRow = (InternalRow) references[references.length - 1];
+/* 014 */
+/* 015 */   }
+/* 016 */
+/* 017 */   public void initialize(int partitionIndex) {
+/* 018 */
+/* 019 */   }
+/* 020 */
+/* 021 */   public java.lang.Object apply(java.lang.Object _i) {
+/* 022 */     InternalRow i = (InternalRow) _i;
+/* 023 */     Object[] values_0 = new Object[2];
+/* 024 */
+/* 025 */     int value_1 = i.getInt(0);
+/* 026 */     if (false) {
+/* 027 */       values_0[0] = null;
+/* 028 */     } else {
+/* 029 */       values_0[0] = value_1;
+/* 030 */     }
+/* 031 */
+/* 032 */     int value_2 = i.getInt(1);
+/* 033 */     if (false) {
+/* 034 */       values_0[1] = null;
+/* 035 */     } else {
+/* 036 */       values_0[1] = value_2;
+/* 037 */     }
+/* 038 */
+/* 039 */     final org.apache.spark.sql.Row value_0 = new org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema(values_0, ((org.apache.spark.sql.types.StructType) references[0] /* schema */));
+/* 040 */     if (false) {
+/* 041 */       mutableRow.setNullAt(0);
+/* 042 */     } else {
+/* 043 */
+/* 044 */       mutableRow.update(0, value_0);
+/* 045 */     }
+/* 046 */
+/* 047 */     return mutableRow;
+/* 048 */   }
+/* 049 */
+/* 050 */
+/* 051 */ }
+
+23/11/10 17:21:29 DEBUG CodeGenerator: 
+/* 001 */ public java.lang.Object generate(Object[] references) {
+/* 002 */   return new SpecificSafeProjection(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ class SpecificSafeProjection extends org.apache.spark.sql.catalyst.expressions.codegen.BaseProjection {
+/* 006 */
+/* 007 */   private Object[] references;
+/* 008 */   private InternalRow mutableRow;
+/* 009 */
+/* 010 */
+/* 011 */   public SpecificSafeProjection(Object[] references) {
+/* 012 */     this.references = references;
+/* 013 */     mutableRow = (InternalRow) references[references.length - 1];
+/* 014 */
+/* 015 */   }
+/* 016 */
+/* 017 */   public void initialize(int partitionIndex) {
+/* 018 */
+/* 019 */   }
+/* 020 */
+/* 021 */   public java.lang.Object apply(java.lang.Object _i) {
+/* 022 */     InternalRow i = (InternalRow) _i;
+/* 023 */     Object[] values_0 = new Object[2];
+/* 024 */
+/* 025 */     int value_1 = i.getInt(0);
+/* 026 */     if (false) {
+/* 027 */       values_0[0] = null;
+/* 028 */     } else {
+/* 029 */       values_0[0] = value_1;
+/* 030 */     }
+/* 031 */
+/* 032 */     int value_2 = i.getInt(1);
+/* 033 */     if (false) {
+/* 034 */       values_0[1] = null;
+/* 035 */     } else {
+/* 036 */       values_0[1] = value_2;
+/* 037 */     }
+/* 038 */
+/* 039 */     final org.apache.spark.sql.Row value_0 = new org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema(values_0, ((org.apache.spark.sql.types.StructType) references[0] /* schema */));
+/* 040 */     if (false) {
+/* 041 */       mutableRow.setNullAt(0);
+/* 042 */     } else {
+/* 043 */
+/* 044 */       mutableRow.update(0, value_0);
+/* 045 */     }
+/* 046 */
+/* 047 */     return mutableRow;
+/* 048 */   }
+/* 049 */
+/* 050 */
+/* 051 */ }
+
+23/11/10 17:21:29 INFO CodeGenerator: Code generated in 6.466862 ms
+Completed
+[END] Time = 3.279 s
+23/11/10 17:21:29 DEBUG DFSClient: WriteChunk allocating new packet seqno=20, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=153088, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=153461, lastFlushOffset=153349, createNewBlock=false
+23/11/10 17:21:29 DEBUG DataStreamer: Queued packet seqno: 20 offsetInBlock: 153088 lastPacketInBlock: false lastByteOffsetInBlock: 153461, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 20
+23/11/10 17:21:29 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 20 offsetInBlock: 153088 lastPacketInBlock: false lastByteOffsetInBlock: 153461
+23/11/10 17:21:29 DEBUG DataStreamer: DFSClient seqno: 20 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:29 INFO SparkContext: Invoking stop() from shutdown hook
+23/11/10 17:21:29 DEBUG DFSClient: WriteChunk allocating new packet seqno=21, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=153088, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DFSClient: DFSClient flush():  bytesCurBlock=153527, lastFlushOffset=153461, createNewBlock=false
+23/11/10 17:21:29 DEBUG DataStreamer: Queued packet seqno: 21 offsetInBlock: 153088 lastPacketInBlock: false lastByteOffsetInBlock: 153527, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 21
+23/11/10 17:21:29 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 21 offsetInBlock: 153088 lastPacketInBlock: false lastByteOffsetInBlock: 153527
+23/11/10 17:21:29 DEBUG DataStreamer: DFSClient seqno: 21 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:29 INFO SparkUI: Stopped Spark web UI at http://Jiahao:4040
+23/11/10 17:21:29 DEBUG DFSClient: WriteChunk allocating new packet seqno=22, src=/spark3.3.0-logs/local-1699608083835.inprogress, packetSize=65016, chunksPerPacket=126, bytesCurBlock=153088, output stream=DFSOutputStream:blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: Queued packet seqno: 22 offsetInBlock: 153088 lastPacketInBlock: false lastByteOffsetInBlock: 153527, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: Queued packet seqno: 23 offsetInBlock: 153527 lastPacketInBlock: true lastByteOffsetInBlock: 153527, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 waiting for ack for: 23
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 22 offsetInBlock: 153088 lastPacketInBlock: false lastByteOffsetInBlock: 153527
+23/11/10 17:21:29 DEBUG DataStreamer: stage=DATA_STREAMING, blk_1073742678_1859
+23/11/10 17:21:29 DEBUG DataStreamer: DFSClient seqno: 22 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:29 DEBUG DataStreamer: blk_1073742678_1859 sending packet seqno: 23 offsetInBlock: 153527 lastPacketInBlock: true lastByteOffsetInBlock: 153527
+23/11/10 17:21:29 DEBUG DataStreamer: DFSClient seqno: 23 reply: SUCCESS downstreamAckTimeNanos: 0 flag: 0
+23/11/10 17:21:29 DEBUG DataStreamer: Closing old block BP-80912574-127.0.1.1-1665050837178:blk_1073742678_1859
+23/11/10 17:21:29 TRACE ProtobufRpcEngine2: 106: Call -> Jiahao/127.0.1.1:9000: complete {src: "/spark3.3.0-logs/local-1699608083835.inprogress" clientName: "DFSClient_NONMAPREDUCE_669026970_1" last { poolId: "BP-80912574-127.0.1.1-1665050837178" blockId: 1073742678 generationStamp: 1859 numBytes: 153527 } fileId: 17318}
+23/11/10 17:21:29 DEBUG Client: IPC Client (1660295258) connection to Jiahao/127.0.1.1:9000 from dbgroup sending #7 org.apache.hadoop.hdfs.protocol.ClientProtocol.complete
+23/11/10 17:21:29 DEBUG Client: IPC Client (1660295258) connection to Jiahao/127.0.1.1:9000 from dbgroup got value #7
+23/11/10 17:21:29 DEBUG ProtobufRpcEngine2: Call: complete took 2ms
+23/11/10 17:21:29 TRACE ProtobufRpcEngine2: 106: Response <- Jiahao/127.0.1.1:9000: complete {result: true}
+23/11/10 17:21:29 TRACE ProtobufRpcEngine2: 106: Call -> Jiahao/127.0.1.1:9000: getFileInfo {src: "/spark3.3.0-logs/local-1699608083835"}
+23/11/10 17:21:29 DEBUG Client: IPC Client (1660295258) connection to Jiahao/127.0.1.1:9000 from dbgroup sending #8 org.apache.hadoop.hdfs.protocol.ClientProtocol.getFileInfo
+23/11/10 17:21:29 DEBUG Client: IPC Client (1660295258) connection to Jiahao/127.0.1.1:9000 from dbgroup got value #8
+23/11/10 17:21:29 DEBUG ProtobufRpcEngine2: Call: getFileInfo took 1ms
+23/11/10 17:21:29 TRACE ProtobufRpcEngine2: 106: Response <- Jiahao/127.0.1.1:9000: getFileInfo {}
+23/11/10 17:21:29 TRACE ProtobufRpcEngine2: 106: Call -> Jiahao/127.0.1.1:9000: rename {src: "/spark3.3.0-logs/local-1699608083835.inprogress" dst: "/spark3.3.0-logs/local-1699608083835"}
+23/11/10 17:21:29 DEBUG Client: IPC Client (1660295258) connection to Jiahao/127.0.1.1:9000 from dbgroup sending #9 org.apache.hadoop.hdfs.protocol.ClientProtocol.rename
+23/11/10 17:21:29 DEBUG Client: IPC Client (1660295258) connection to Jiahao/127.0.1.1:9000 from dbgroup got value #9
+23/11/10 17:21:29 DEBUG ProtobufRpcEngine2: Call: rename took 1ms
+23/11/10 17:21:29 TRACE ProtobufRpcEngine2: 106: Response <- Jiahao/127.0.1.1:9000: rename {result: true}
+23/11/10 17:21:29 TRACE ProtobufRpcEngine2: 106: Call -> Jiahao/127.0.1.1:9000: setTimes {src: "/spark3.3.0-logs/local-1699608083835" mtime: 1699608089266 atime: 18446744073709551615}
+23/11/10 17:21:29 DEBUG Client: IPC Client (1660295258) connection to Jiahao/127.0.1.1:9000 from dbgroup sending #10 org.apache.hadoop.hdfs.protocol.ClientProtocol.setTimes
+23/11/10 17:21:29 DEBUG Client: IPC Client (1660295258) connection to Jiahao/127.0.1.1:9000 from dbgroup got value #10
+23/11/10 17:21:29 DEBUG ProtobufRpcEngine2: Call: setTimes took 1ms
+23/11/10 17:21:29 TRACE ProtobufRpcEngine2: 106: Response <- Jiahao/127.0.1.1:9000: setTimes {}
+23/11/10 17:21:29 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+23/11/10 17:21:29 INFO MemoryStore: MemoryStore cleared
+23/11/10 17:21:29 INFO BlockManager: BlockManager stopped
+23/11/10 17:21:29 INFO BlockManagerMaster: BlockManagerMaster stopped
+23/11/10 17:21:29 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+23/11/10 17:21:29 INFO SparkContext: Successfully stopped SparkContext
+23/11/10 17:21:29 INFO ShutdownHookManager: Shutdown hook called
+23/11/10 17:21:29 INFO ShutdownHookManager: Deleting directory /tmp/spark-c89ab0f0-f0bd-41ef-9854-41edeadd8fb1
+23/11/10 17:21:29 INFO ShutdownHookManager: Deleting directory /tmp/spark-1152f535-e373-45cb-ab8e-f8b5b2cebd76/repl-e2088756-46cd-43d9-b7c6-01c5f70e2175
+23/11/10 17:21:29 INFO ShutdownHookManager: Deleting directory /tmp/spark-1152f535-e373-45cb-ab8e-f8b5b2cebd76
+23/11/10 17:21:29 DEBUG FileSystem: FileSystem.close() by method: org.apache.hadoop.hdfs.DistributedFileSystem.close(DistributedFileSystem.java:1518)); Key: (dbgroup (auth:SIMPLE))@hdfs://jiahao:9000; URI: hdfs://Jiahao:9000; Object Identity Hash: 5bcca1fc
+23/11/10 17:21:29 TRACE FileSystem: FileSystem.close() full stack trace:
+java.lang.Throwable
+	at org.apache.hadoop.fs.FileSystem.debugLogFileSystemClose(FileSystem.java:645)
+	at org.apache.hadoop.fs.FileSystem.close(FileSystem.java:2592)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.close(DistributedFileSystem.java:1518)
+	at org.apache.hadoop.fs.FileSystem$Cache.closeAll(FileSystem.java:3678)
+	at org.apache.hadoop.fs.FileSystem$Cache$ClientFinalizer.run(FileSystem.java:3695)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+23/11/10 17:21:29 DEBUG Client: stopping client from cache: Client-abf868d39722420da9350229ad3d9d99
+23/11/10 17:21:29 DEBUG Client: removing client from cache: Client-abf868d39722420da9350229ad3d9d99
+23/11/10 17:21:29 DEBUG Client: stopping actual client because no more references remain: Client-abf868d39722420da9350229ad3d9d99
+23/11/10 17:21:29 DEBUG Client: Stopping client
+23/11/10 17:21:29 TRACE Client: Interrupted while waiting to retrieve RPC response.
+23/11/10 17:21:29 DEBUG Client: IPC Client (1660295258) connection to Jiahao/127.0.1.1:9000 from dbgroup: closed
+23/11/10 17:21:29 DEBUG Client: IPC Client (1660295258) connection to Jiahao/127.0.1.1:9000 from dbgroup: stopped, remaining connections 0
+23/11/10 17:21:29 DEBUG ShutdownHookManager: Completed shutdown in 0.044 seconds; Timeouts: 0
+23/11/10 17:21:29 DEBUG ShutdownHookManager: ShutdownHookManager completed shutdown.
